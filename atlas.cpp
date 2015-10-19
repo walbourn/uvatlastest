@@ -130,7 +130,9 @@ bool Test01()
     bool success = true;
     HRESULT hr;
 
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6385 6387)
     {
         std::vector<UVAtlasVertex> vb;
         std::vector<uint8_t> ib;
@@ -188,6 +190,7 @@ bool Test01()
             success = false;
         }
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {
@@ -709,7 +712,7 @@ bool Test01()
                  || facePart.size() != 12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] remap null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] remap null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -796,8 +799,7 @@ bool Test01()
             if ( vb.size() < 26 || vb.size() > 30
                  || nFaces != 12
                  || facePart.size() != 12
-                 || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || remap.size() != vb.size() )
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] numChartsOut null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch );
@@ -806,11 +808,6 @@ bool Test01()
             else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] numChartsOut null\n" );
-                success = false;
-            }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
-            {
-                printe( "\nERROR: Face partition invalid from create atlas [fmcube16] numChartsOut null\n" );
                 success = false;
             }
             else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
@@ -900,7 +897,9 @@ bool Test02()
     bool success = true;
     HRESULT hr;
 
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6385 6387)
     {
         std::vector<UVAtlasVertex> vb;
         std::vector<uint8_t> ib;
@@ -949,6 +948,7 @@ bool Test02()
             success = false;
         }
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {
@@ -1511,7 +1511,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] remap null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] remap null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1611,8 +1611,7 @@ bool Test02()
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || resultAdj.size() != 3*12 )
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] numChartsOut null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch );
@@ -1621,11 +1620,6 @@ bool Test02()
             else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] numChartsOut null\n" );
-                success = false;
-            }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
-            {
-                printe( "\nERROR: Face partition invalid from create partition [fmcube16] numChartsOut null\n" );
                 success = false;
             }
             else
@@ -1801,7 +1795,9 @@ bool Test03()
         uint32_t(-1), 10, uint32_t(-1),
     };
 
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6387)
     {
         std::vector<UVAtlasVertex> vb;
         vb.resize( _countof(s_vb ) );
@@ -1833,6 +1829,7 @@ bool Test03()
             success = false;
         }
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {

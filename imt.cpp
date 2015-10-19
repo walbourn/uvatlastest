@@ -72,7 +72,12 @@ static HRESULT LoadTextureF32( const WCHAR* fname, std::unique_ptr<float[]>& tex
         return E_INVALIDARG;
 
     WCHAR szPath[MAX_PATH];
-    ExpandEnvironmentStringsW( fname, szPath, MAX_PATH );
+    DWORD ret = ExpandEnvironmentStringsW( fname, szPath, MAX_PATH );
+    if ( !ret || ret > MAX_PATH )  
+    {  
+        printe( "ERROR: ExpandEnvironmentStrings FAILED\n" );  
+        return E_FAIL;  
+    } 
 
     WCHAR ext[_MAX_EXT];
     _wsplitpath_s( szPath, nullptr, 0, nullptr, 0, nullptr, 0, ext, _MAX_EXT );
@@ -148,7 +153,9 @@ bool Test04()
 
     std::unique_ptr<float[]> imtArray( new float[ 12 * 3 ] );
 
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6385 6387)
     memset( imtArray.get(), 0xff, sizeof(float) * 12 * 3 );
 
     HRESULT hr = UVAtlasComputeIMTFromPerVertexSignal( g_fmCubeVerts, 24,
@@ -210,6 +217,7 @@ bool Test04()
         printe( "\nERROR: expected failure for bad stride\n" );
         success = false;
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {
@@ -440,7 +448,9 @@ bool Test05()
 
     std::unique_ptr<float[]> imtArray( new float[ 12 * 3 ] );
 
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6385 6387)
     memset( imtArray.get(), 0xff, sizeof(float) * 12 * 3 );
 
     HRESULT hr = UVAtlasComputeIMTFromSignal( g_fmCubeVerts, g_fmCubeUVs, 24,
@@ -487,6 +497,7 @@ bool Test05()
         printe( "\nERROR: expected failure for too many verts\n" );
         success = false;
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {
@@ -827,7 +838,9 @@ bool Test06()
 
     std::unique_ptr<float[]> imtArray( new float[ 12 * 3 ] );
 
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6385 6387)
     memset( imtArray.get(), 0xff, sizeof(float) * 12 * 3 );
 
     hr = UVAtlasComputeIMTFromTexture( g_fmCubeVerts, g_fmCubeUVs, 24,
@@ -869,6 +882,7 @@ bool Test06()
         printe( "\nERROR: expected failure for too many verts\n" );
         success = false;
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {
@@ -1155,7 +1169,9 @@ bool Test07()
 
     std::unique_ptr<float[]> imtArray( new float[ 12 * 3 ] );
     
-    // Parameter validations
+    // invalid args
+    #pragma warning(push)
+    #pragma warning(disable : 6385 6387)
     memset( imtArray.get(), 0xff, sizeof(float) * 12 * 3 );
 
     hr = UVAtlasComputeIMTFromPerTexelSignal( g_fmCubeVerts, g_fmCubeUVs, 24,
@@ -1208,6 +1224,7 @@ bool Test07()
         printe( "\nERROR: expected failure for too many verts\n" );
         success = false;
     }
+    #pragma warning(pop)
 
     // 16-bit cube
     {

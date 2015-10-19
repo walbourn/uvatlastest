@@ -44,28 +44,22 @@ bool Test09()
         }
         else
         {
-            auto ptr = reinterpret_cast<const Vertex32*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535; ++j )
             {
-                float f = float(j);
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                if ( !IsTestVBCorrect32( ptr, DWORD( j ) ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) identity failed (2)\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 32;
             }
         }
 
         // invalid args
+        #pragma warning(push)
+        #pragma warning(disable : 6387)
         hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, nullptr, destvb.get() );
         if ( hr != E_INVALIDARG )
         {
@@ -93,6 +87,7 @@ bool Test09()
             printe("\nERROR: UVAtlasApplyRemap expected failure for newnverts < verts (%08X)\n", hr );
             success = false;
         }
+        #pragma warning(pop)
     }
 
     // Reverse (32)
@@ -144,16 +139,8 @@ bool Test09()
         {
             for( size_t j = 0; j < 65535; ++j )
             {
-                auto ptr = reinterpret_cast<const Vertex32*>( destvb.get() + 32*j );
-                float f = float( remap[j] );
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                auto ptr = destvb.get() + 32*j;
+                if ( !IsTestVBCorrect32( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) shuffle failed\n" );
                     printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
@@ -188,18 +175,16 @@ bool Test09()
         }
         else
         {
-            auto ptr = reinterpret_cast<const GUID*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535; ++j )
             {
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD(j) )
+                if ( !IsTestVBCorrect16( ptr, DWORD(j) ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) identity failed (2)\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 16;
             }
         }
     }
@@ -253,10 +238,8 @@ bool Test09()
         {
             for( size_t j = 0; j < 65535; ++j )
             {
-                auto ptr = reinterpret_cast<const GUID*>( destvb.get() + 16*j );
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD( remap[j] ) )
+                auto ptr = destvb.get() + 16*j;
+                if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) shuffle failed\n" );
                     printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
@@ -337,43 +320,27 @@ bool Test10()
         }
         else
         {
-            auto ptr = reinterpret_cast<const Vertex32*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535; ++j )
             {
-                float f = float(j);
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                if ( !IsTestVBCorrect32( ptr, DWORD( j ) ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) dups identity failed\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 32;
             }
 
             for( size_t j = 0; j < 256; ++j )
             {
-                float f = float(j);
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                if ( !IsTestVBCorrect32( ptr, DWORD(j) ) )
                 {
                     printe("ERROR: UVAtlasApplyRemap(32) dups identity failed (2)\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 32;
             }
         }
     }
@@ -400,43 +367,27 @@ bool Test10()
         }
         else
         {
-            auto ptr = reinterpret_cast<const Vertex32*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535; ++j )
             {
-                float f = float( remap[j] );
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                if ( !IsTestVBCorrect32( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) dups reverse failed\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 32;
             }
 
             for( size_t j = 0; j < 256; ++j )
             {
-                float f = float( remap[j] );
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                if ( !IsTestVBCorrect32( ptr, remap[j] ) )
                 {
                     printe("ERROR: UVAtlasApplyRemap(32) dups reverse failed (2)\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 32;
             }
         }
     }
@@ -467,25 +418,17 @@ bool Test10()
         }
         else
         {
-            auto ptr = reinterpret_cast<const Vertex32*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535 + 256; ++j )
             {
-                float f = float( remap[j] );
-                if ( ( ptr->pos.x != f )
-                        || ( ptr->pos.y != (f + 0.1f) )
-                        || ( ptr->pos.z != (f + 0.2f) )
-                        || ( ptr->norm.x != (f + 0.3f) )
-                        || ( ptr->norm.y != (f + 0.4f) ) 
-                        || ( ptr->norm.z != (f + 0.5f) )
-                        || ( ptr->tex.x != (f + 0.6f) )
-                        || ( ptr->tex.y != (f + 0.7f) ) )
+                if ( !IsTestVBCorrect32( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) dups shuffle failed\n" );
                     printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 32;
             }
         }
     }
@@ -517,31 +460,27 @@ bool Test10()
         }
         else
         {
-            auto ptr = reinterpret_cast<const GUID*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535; ++j )
             {
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD( remap[j] ) )
+                if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) dups identity failed\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 16;
             }
 
             for( size_t j = 0; j < 256; ++j )
             {
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD( remap[j] ) )
+                if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) dups identity failed (2)\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 16;
             }
         }
     }
@@ -568,31 +507,27 @@ bool Test10()
         }
         else
         {
-            auto ptr = reinterpret_cast<const GUID*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535; ++j )
             {
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD( remap[j] ) )
+                if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) dups reverse failed\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 16;
             }
 
             for( size_t j = 0; j < 256; ++j )
             {
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD( remap[j] ) )
+                if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) dups reverse failed (2)\n" );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 16;
             }
         }
     }
@@ -623,19 +558,17 @@ bool Test10()
         }
         else
         {
-            auto ptr = reinterpret_cast<const GUID*>( destvb.get() );
+            auto ptr = destvb.get();
             for( size_t j = 0; j < 65535 + 256; ++j )
             {
-                if ( memcmp( reinterpret_cast<const BYTE*>(ptr) + sizeof(DWORD),
-                             reinterpret_cast<const BYTE*>(&g_VBGuid) + sizeof(DWORD), sizeof(GUID) - sizeof(DWORD) ) != 0
-                     || ptr->Data1 != DWORD( remap[j] ) )
+                if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) dups shuffle failed\n" );
                     printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
                     success = false;
                     break;
                 }
-                ++ptr;
+                ptr += 16;
             }
         }
     }

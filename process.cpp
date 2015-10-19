@@ -106,9 +106,14 @@ bool Test08()
     for( size_t index=0; index < _countof(g_TestMedia); ++index )
     {
         WCHAR szPath[MAX_PATH];
-        ExpandEnvironmentStringsW( g_TestMedia[index].fname, szPath, MAX_PATH );
+        DWORD ret = ExpandEnvironmentStringsW( g_TestMedia[index].fname, szPath, MAX_PATH );
+        if ( !ret || ret > MAX_PATH )  
+        {  
+            printe( "ERROR: ExpandEnvironmentStrings FAILED\n" );  
+            return false;  
+        } 
 
-#ifdef DEBUG
+#ifdef _DEBUG
         OutputDebugStringW(szPath);
         OutputDebugStringA("\n");
 #endif
@@ -142,7 +147,7 @@ bool Test08()
         size_t nFaces = mesh->indices.size() / 3;
         size_t nVerts = mesh->vertices.size();
 
-#ifdef DEBUG
+#ifdef _DEBUG
         char output[ 256 ] = { 0 };
         sprintf_s( output, "INFO: %Iu verts, %Iu faces\n", nVerts, nFaces );
         OutputDebugStringA( output );
@@ -157,7 +162,7 @@ bool Test08()
             continue;
         }
 
-#ifdef DEBUG
+#ifdef _DEBUG
         hr = Validate(&mesh->indices.front(), nFaces, nVerts, nullptr, VALIDATE_DEGENERATE, &msgs );
         if ( FAILED(hr) )
         {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -27,26 +27,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -68,23 +68,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>Bin\Desktop_2012\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\Desktop_2013\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -93,7 +93,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0600;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;..\..\DirectXMesh\Tests\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;</AdditionalIncludeDirectories>
       <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
@@ -108,9 +108,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0600;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;..\..\DirectXMesh\Tests\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;</AdditionalIncludeDirectories>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +126,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0600;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;..\..\DirectXMesh\Tests\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;</AdditionalIncludeDirectories>
       <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
@@ -145,9 +145,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0600;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;..\..\DirectXMesh\Tests\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\UVAtlas\inc;..\..\DirectXMesh\DirectXMesh;..\..\DirectXMesh\Utilities;..\..\DirectXTex\DirectXTex;</AdditionalIncludeDirectories>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,13 +167,13 @@
     <ClInclude Include="directxtest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DirectXMesh\DirectXMesh\DirectXMesh_Desktop_2012.vcxproj">
+    <ProjectReference Include="..\..\DirectXMesh\DirectXMesh\DirectXMesh_Desktop_2013.vcxproj">
       <Project>{6857f086-f6fe-4150-9ed7-7446f1c1c220}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\DirectXTex\DirectXTex\DirectXTex_Desktop_2012.vcxproj">
+    <ProjectReference Include="..\..\DirectXTex\DirectXTex\DirectXTex_Desktop_2013.vcxproj">
       <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\UVAtlas\UVAtlas_2012.vcxproj">
+    <ProjectReference Include="..\UVAtlas\UVAtlas_2013.vcxproj">
       <Project>{10359e70-6a7f-4433-8ef1-b0fb688d830e}</Project>
     </ProjectReference>
   </ItemGroup>
