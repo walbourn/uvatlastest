@@ -31,7 +31,7 @@ bool Test09()
 
         auto destvb = CreateVertexBuffer( 32, 65535 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) identity failed (%08X)\n", hr );
@@ -67,21 +67,21 @@ bool Test09()
             success = false;
         }
 
-        hr = UVAtlasApplyRemap( srcvb.get(), UINT32_MAX, 65535, 65535, &remap.front(), destvb.get() );
+        hr = UVAtlasApplyRemap( srcvb.get(), UINT32_MAX, 65535, 65535, remap.data(), destvb.get() );
         if ( hr != E_INVALIDARG )
         {
             printe("\nERROR: UVAtlasApplyRemap expected failure for bad stride value (%08X)\n", hr );
             success = false;
         }
 
-        hr = UVAtlasApplyRemap( srcvb.get(), 32, UINT32_MAX, UINT32_MAX, &remap.front(), destvb.get() );
+        hr = UVAtlasApplyRemap( srcvb.get(), 32, UINT32_MAX, UINT32_MAX, remap.data(), destvb.get() );
         if ( hr != E_INVALIDARG )
         {
             printe("\nERROR: UVAtlasApplyRemap expected failure for 32-max value verts (%08X)\n", hr );
             success = false;
         }
 
-        hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 256, &remap.front(), destvb.get() );
+        hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 256, remap.data(), destvb.get() );
         if ( hr != E_INVALIDARG )
         {
             printe("\nERROR: UVAtlasApplyRemap expected failure for newnverts < verts (%08X)\n", hr );
@@ -101,7 +101,7 @@ bool Test09()
 
         auto destvb = CreateVertexBuffer( 32, 65535 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) reverse failed (%08X)\n", hr );
@@ -128,7 +128,7 @@ bool Test09()
 
         auto destvb = CreateVertexBuffer( 32, 65535 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) shuffle failed (%08X)\n", hr );
@@ -162,7 +162,7 @@ bool Test09()
 
         auto destvb = CreateVertexBuffer( 16, 65535 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) identity failed (%08X)\n", hr );
@@ -200,7 +200,7 @@ bool Test09()
 
         auto destvb = CreateVertexBuffer( 16, 65535 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) reverse failed (%08X)\n", hr );
@@ -227,7 +227,7 @@ bool Test09()
 
         auto destvb = CreateVertexBuffer( 16, 65535 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) shuffle failed (%08X)\n", hr );
@@ -307,7 +307,7 @@ bool Test10()
 
         auto destvb = CreateVertexBuffer( 32, 65535 + 256 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) dups identity failed (%08X)\n", hr );
@@ -359,7 +359,7 @@ bool Test10()
 
         auto destvb = CreateVertexBuffer( 32, 65535 + 256 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) dups reverse failed (%08X)\n", hr );
@@ -409,7 +409,7 @@ bool Test10()
 
         auto destvb = CreateVertexBuffer( 32, 65535 + 256 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) dups shuffle failed (%08X)\n", hr );
@@ -447,7 +447,7 @@ bool Test10()
 
         auto destvb = CreateVertexBuffer( 16, 65535 + 256 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) dups identity failed (%08X)\n", hr );
@@ -499,7 +499,7 @@ bool Test10()
 
         auto destvb = CreateVertexBuffer( 16, 65535 + 256 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) dups reverse failed (%08X)\n", hr );
@@ -549,7 +549,7 @@ bool Test10()
 
         auto destvb = CreateVertexBuffer( 16, 65535 + 256 );
 
-        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, &remap.front(), destvb.get() );
+        HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) dups shuffle failed (%08X)\n", hr );

@@ -222,17 +222,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16]\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16]\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16]\n" );
                 success = false;
@@ -240,7 +240,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (%08X):%S\n", hr, msgs.c_str() );
@@ -272,17 +272,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] (2)\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] (2)\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] (2)\n" );
                 success = false;
@@ -290,7 +290,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (2) (%08X):%S\n", hr, msgs.c_str() );
@@ -322,17 +322,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] FAST\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] FAST\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] FAST\n" );
                 success = false;
@@ -340,7 +340,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] FAST (%08X):%S\n", hr, msgs.c_str() );
@@ -372,17 +372,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] QUALITY\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] QUALITY\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] QUALITY\n" );
                 success = false;
@@ -390,7 +390,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] QUALITY (%08X):%S\n", hr, msgs.c_str() );
@@ -422,17 +422,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] maxchartnumber\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] maxchartnumber\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] maxchartnumber\n" );
                 success = false;
@@ -440,7 +440,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxchartnumber (%08X):%S\n", hr, msgs.c_str() );
@@ -473,17 +473,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] maxstretch\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] maxstretch\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] maxstretch\n" );
                 success = false;
@@ -491,7 +491,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxstretch (%08X):%S\n", hr, msgs.c_str() );
@@ -523,17 +523,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] gutter\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] gutter\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] gutter\n" );
                 success = false;
@@ -541,7 +541,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] gutter (%08X):%S\n", hr, msgs.c_str() );
@@ -573,17 +573,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] feadj\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] feadj\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] feadj\n" );
                 success = false;
@@ -591,7 +591,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] feadj (%08X):%S\n", hr, msgs.c_str() );
@@ -623,17 +623,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] imt\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] imt\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] imt\n" );
                 success = false;
@@ -641,7 +641,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] imt (%08X):%S\n", hr, msgs.c_str() );
@@ -672,12 +672,12 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] facePartitioning null\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] facePartitioning null\n" );
                 success = false;
@@ -685,7 +685,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] facePartitioning null (%08X):%S\n", hr, msgs.c_str() );
@@ -716,7 +716,7 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] remap null\n" );
                 success = false;
@@ -724,7 +724,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] remap null (%08X):%S\n", hr, msgs.c_str() );
@@ -756,17 +756,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] maxStretchOut null\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] maxStretchOut null\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube16] maxStretchOut null\n" );
                 success = false;
@@ -774,7 +774,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxStretchOut null (%08X):%S\n", hr, msgs.c_str() );
@@ -805,12 +805,12 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube16] numChartsOut null\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube16] numChartsOut\n" );
                 success = false;
@@ -818,7 +818,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] numChartsOut null (%08X):%S\n", hr, msgs.c_str() );
@@ -858,17 +858,17 @@ bool Test01()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint32_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint32_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create atlas [fmcube32]\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create atlas [fmcube32]\n" );
                 success = false;
             }
-            else if ( !VerifyVertices( g_fmCubeVerts, 24, &vb.front(), &remap.front(), vb.size() ) )
+            else if ( !VerifyVertices( g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size() ) )
             {
                 printe( "\nERROR: Vertex data doesn't match remap [fmcube32]\n" );
                 success = false;
@@ -876,7 +876,7 @@ bool Test01()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint32_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube32] (%08X):%S\n", hr, msgs.c_str() );
@@ -982,12 +982,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16]\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16]\n" );
                 success = false;
@@ -995,7 +995,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (%08X):%S\n", hr, msgs.c_str() );
@@ -1003,7 +1003,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] (%08X):%S\n", hr, msgs.c_str() );
@@ -1036,12 +1036,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] (2)\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] (2)\n" );
                 success = false;
@@ -1049,14 +1049,14 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (2) (%08X):%S\n", hr, msgs.c_str() );
                     success = false;
                 }
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] (2) (%08X):%S\n", hr, msgs.c_str() );
@@ -1089,12 +1089,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] FAST\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] FAST\n" );
                 success = false;
@@ -1102,7 +1102,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] FAST (%08X):%S\n", hr, msgs.c_str() );
@@ -1110,7 +1110,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] FAST (%08X):%S\n", hr, msgs.c_str() );
@@ -1143,12 +1143,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] QUALITY\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] QUALITY\n" );
                 success = false;
@@ -1156,7 +1156,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] QUALITY (%08X):%S\n", hr, msgs.c_str() );
@@ -1164,7 +1164,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] QUALITY (%08X):%S\n", hr, msgs.c_str() );
@@ -1197,12 +1197,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] maxchartnumber\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] maxchartnumber\n" );
                 success = false;
@@ -1210,7 +1210,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxchartnumber (%08X):%S\n", hr, msgs.c_str() );
@@ -1218,7 +1218,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxchartnumber (%08X):%S\n", hr, msgs.c_str() );
@@ -1252,12 +1252,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] maxstretch\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] maxstretch\n" );
                 success = false;
@@ -1265,7 +1265,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxstretch (%08X):%S\n", hr, msgs.c_str() );
@@ -1273,7 +1273,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxstretch (%08X):%S\n", hr, msgs.c_str() );
@@ -1306,12 +1306,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] gutter\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] gutter\n" );
                 success = false;
@@ -1319,7 +1319,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] gutter (%08X):%S\n", hr, msgs.c_str() );
@@ -1327,7 +1327,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] gutter (%08X):%S\n", hr, msgs.c_str() );
@@ -1360,12 +1360,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] feadj\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] feadj\n" );
                 success = false;
@@ -1373,7 +1373,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] feadj (%08X):%S\n", hr, msgs.c_str() );
@@ -1381,7 +1381,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] feadj (%08X):%S\n", hr, msgs.c_str() );
@@ -1414,12 +1414,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] imt\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] imt\n" );
                 success = false;
@@ -1427,7 +1427,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] imt (%08X):%S\n", hr, msgs.c_str() );
@@ -1435,7 +1435,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] imt (%08X):%S\n", hr, msgs.c_str() );
@@ -1467,7 +1467,7 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] facePartitioning null\n" );
                 success = false;
@@ -1475,7 +1475,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] facePartitioning null (%08X):%S\n", hr, msgs.c_str() );
@@ -1483,7 +1483,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] facePartitioning null (%08X):%S\n", hr, msgs.c_str() );
@@ -1515,7 +1515,7 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] remap null\n" );
                 success = false;
@@ -1523,7 +1523,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] remap null (%08X):%S\n", hr, msgs.c_str() );
@@ -1531,7 +1531,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] remap null (%08X):%S\n", hr, msgs.c_str() );
@@ -1564,12 +1564,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] maxStretchOut null\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube16] maxStretchOut null\n" );
                 success = false;
@@ -1577,7 +1577,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxStretchOut null (%08X):%S\n", hr, msgs.c_str() );
@@ -1585,7 +1585,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxStretchOut null(%08X):%S\n", hr, msgs.c_str() );
@@ -1617,7 +1617,7 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube16] numChartsOut null\n" );
                 success = false;
@@ -1625,7 +1625,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] numChartsOut null (%08X):%S\n", hr, msgs.c_str() );
@@ -1633,7 +1633,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] numChartsOut null (%08X):%S\n", hr, msgs.c_str() );
@@ -1675,12 +1675,12 @@ bool Test02()
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
-            else if ( !IsValidVertexRemap( reinterpret_cast<const uint32_t*>( &ib.front() ), 12, &remap.front(), vb.size(), true ) )
+            else if ( !IsValidVertexRemap( reinterpret_cast<const uint32_t*>( ib.data() ), 12, remap.data(), vb.size(), true ) )
             {
                 printe( "\nERROR: Vertex remap invalid from create partition [fmcube32]\n" );
                 success = false;
             }
-            else if ( !IsValidFacePartition( &facePart.front(), 12, numCharts ) )
+            else if ( !IsValidFacePartition( facePart.data(), 12, numCharts ) )
             {
                 printe( "\nERROR: Face partition invalid from create partition [fmcube32]\n" );
                 success = false;
@@ -1688,7 +1688,7 @@ bool Test02()
             else
             {
                 std::wstring msgs;
-                hr = Validate( reinterpret_cast<const uint32_t*>( &ib.front() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube32] (%08X):%S\n", hr, msgs.c_str() );
@@ -1696,7 +1696,7 @@ bool Test02()
                 }
 
                 msgs.clear();
-                hr = Validate( reinterpret_cast<const uint32_t*>( &ib.front() ), 12, vb.size(), &resultAdj.front(), VALIDATE_DEFAULT, &msgs );
+                hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube32] (%08X):%S\n", hr, msgs.c_str() );
@@ -1801,15 +1801,15 @@ bool Test03()
     {
         std::vector<UVAtlasVertex> vb;
         vb.resize( _countof(s_vb ) );
-        memcpy( &vb.front(), s_vb, sizeof(s_vb) );
+        memcpy( vb.data(), s_vb, sizeof(s_vb) );
 
         std::vector<uint8_t> ib;
         ib.resize( sizeof(s_ib16) );
-        memcpy( &ib.front(), s_ib16, sizeof(s_ib16) );
+        memcpy( ib.data(), s_ib16, sizeof(s_ib16) );
 
         std::vector<uint32_t> resultAdj;
         resultAdj.resize( 12*3 );
-        memcpy( &resultAdj.front(), s_resultAdj, sizeof(s_resultAdj) );
+        memcpy( resultAdj.data(), s_resultAdj, sizeof(s_resultAdj) );
                         
         hr = UVAtlasPack( vb, ib, DXGI_FORMAT_R8G8B8A8_UNORM,
                           512, 512, 1.f,
@@ -1835,15 +1835,15 @@ bool Test03()
     {
         std::vector<UVAtlasVertex> vb;
         vb.resize( _countof(s_vb ) );
-        memcpy( &vb.front(), s_vb, sizeof(s_vb) );
+        memcpy( vb.data(), s_vb, sizeof(s_vb) );
 
         std::vector<uint8_t> ib;
         ib.resize( sizeof(s_ib16) );
-        memcpy( &ib.front(), s_ib16, sizeof(s_ib16) );
+        memcpy( ib.data(), s_ib16, sizeof(s_ib16) );
 
         std::vector<uint32_t> resultAdj;
         resultAdj.resize( 12*3 );
-        memcpy( &resultAdj.front(), s_resultAdj, sizeof(s_resultAdj) );
+        memcpy( resultAdj.data(), s_resultAdj, sizeof(s_resultAdj) );
         
         hr = UVAtlasPack( vb, ib, DXGI_FORMAT_R16_UINT,
                           512, 512, 1.f,
@@ -1859,15 +1859,15 @@ bool Test03()
     {
         std::vector<UVAtlasVertex> vb;
         vb.resize( _countof(s_vb ) );
-        memcpy( &vb.front(), s_vb, sizeof(s_vb) );
+        memcpy( vb.data(), s_vb, sizeof(s_vb) );
 
         std::vector<uint8_t> ib;
         ib.resize( sizeof(s_ib32) );
-        memcpy( &ib.front(), s_ib32, sizeof(s_ib32) );
+        memcpy( ib.data(), s_ib32, sizeof(s_ib32) );
 
         std::vector<uint32_t> resultAdj;
         resultAdj.resize( 12*3 );
-        memcpy( &resultAdj.front(), s_resultAdj, sizeof(s_resultAdj) );
+        memcpy( resultAdj.data(), s_resultAdj, sizeof(s_resultAdj) );
         
         hr = UVAtlasPack( vb, ib, DXGI_FORMAT_R32_UINT,
                           512, 512, 1.f,

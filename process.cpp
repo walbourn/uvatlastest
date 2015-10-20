@@ -154,7 +154,7 @@ bool Test08()
 #endif
 
         std::wstring msgs;
-        hr = Validate( &mesh->indices.front(), nFaces, nVerts, nullptr, VALIDATE_DEFAULT, &msgs );
+        hr = Validate( mesh->indices.data(), nFaces, nVerts, nullptr, VALIDATE_DEFAULT, &msgs );
         if ( FAILED(hr) )
         {
             success = false;
@@ -163,7 +163,7 @@ bool Test08()
         }
 
 #ifdef _DEBUG
-        hr = Validate(&mesh->indices.front(), nFaces, nVerts, nullptr, VALIDATE_DEGENERATE, &msgs );
+        hr = Validate( mesh->indices.data(), nFaces, nVerts, nullptr, VALIDATE_DEGENERATE, &msgs );
         if ( FAILED(hr) )
         {
             OutputDebugStringW( msgs.c_str() );
@@ -177,7 +177,7 @@ bool Test08()
         std::unique_ptr<uint32_t[]> adj( new uint32_t[ mesh->indices.size() ] );
         memset( adj.get(), 0xff, sizeof(uint32_t) *  mesh->indices.size() );
 
-        hr = GenerateAdjacencyAndPointReps( &mesh->indices.front(), nFaces, pos.get(), nVerts, 0.f, nullptr, adj.get() );
+        hr = GenerateAdjacencyAndPointReps( mesh->indices.data(), nFaces, pos.get(), nVerts, 0.f, nullptr, adj.get() );
         if ( FAILED(hr) )
         {
             success = false;
@@ -191,7 +191,7 @@ bool Test08()
         std::vector<uint32_t> remap;
         float maxStretch = 0.f;
         size_t numCharts = 0;
-        hr = UVAtlasCreate( pos.get(), nVerts, &mesh->indices.front(), DXGI_FORMAT_R16_UINT, nFaces,
+        hr = UVAtlasCreate( pos.get(), nVerts, mesh->indices.data(), DXGI_FORMAT_R16_UINT, nFaces,
                             0, 0.f, 512, 512, 1.f,
                             adj.get(), nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
@@ -210,17 +210,17 @@ bool Test08()
                     szPath, vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
             success = false;
         }
-        else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( &ib.front() ), nFaces, &remap.front(), vb.size(), true ) )
+        else if ( !IsValidVertexRemap( reinterpret_cast<const uint16_t*>( ib.data() ), nFaces, remap.data(), vb.size(), true ) )
         {
             printe( "\nERROR: Vertex remap invalid from create atlas:\n%S\n", szPath );
             success = false;
         }
-        else if ( !IsValidFacePartition( &facePart.front(), nFaces, numCharts ) )
+        else if ( !IsValidFacePartition( facePart.data(), nFaces, numCharts ) )
         {
             printe( "\nERROR: Face partition invalid from create atlas:\n%S\n", szPath );
             success = false;
         }
-        else if ( !VerifyVertices( pos.get(), nVerts, &vb.front(), &remap.front(), vb.size() ) )
+        else if ( !VerifyVertices( pos.get(), nVerts, vb.data(), remap.data(), vb.size() ) )
         {
             printe( "\nERROR: Vertex data doesn't match remap:\n%S\n", szPath );
             success = false;
@@ -228,7 +228,7 @@ bool Test08()
         else
         {
             std::wstring msgs;
-            hr = Validate( reinterpret_cast<const uint16_t*>( &ib.front() ), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
+            hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
             if ( FAILED(hr)) 
             {
                 printe( "\nERROR: Invalid index buffer from create atlas (%08X):\n%S\n%S\n", hr, szPath, msgs.c_str() );
