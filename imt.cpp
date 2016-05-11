@@ -66,12 +66,12 @@ static HRESULT __cdecl UVAtlasCallback( float fPercentDone  )
 
 
 //-------------------------------------------------------------------------------------
-static HRESULT LoadTextureF32( const WCHAR* fname, std::unique_ptr<float[]>& tex, size_t& width, size_t& height )
+static HRESULT LoadTextureF32( const wchar_t* fname, std::unique_ptr<float[]>& tex, size_t& width, size_t& height )
 {
     if ( !fname )
         return E_INVALIDARG;
 
-    WCHAR szPath[MAX_PATH];
+    wchar_t szPath[MAX_PATH];
     DWORD ret = ExpandEnvironmentStringsW( fname, szPath, MAX_PATH );
     if ( !ret || ret > MAX_PATH )  
     {  
@@ -79,7 +79,7 @@ static HRESULT LoadTextureF32( const WCHAR* fname, std::unique_ptr<float[]>& tex
         return E_FAIL;  
     } 
 
-    WCHAR ext[_MAX_EXT];
+    wchar_t ext[_MAX_EXT];
     _wsplitpath_s( szPath, nullptr, 0, nullptr, 0, nullptr, 0, ext, _MAX_EXT );
 
     ScratchImage image;
