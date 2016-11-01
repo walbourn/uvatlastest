@@ -27,8 +27,8 @@
                                        digest[8], digest[9], digest[10], digest[11], digest[12], digest[13], digest[14], digest[15] );
 #endif
 
-#define MESH_MEDIA_PATH L"\\\\durfs\\durango\\TestContent\\graphics\\directxmesh\\media\\"
+#define MESH_MEDIA_PATH L"D:\\Microsoft\\directxmeshmedia\\"
 
-#define TEX_MEDIA_PATH L"\\\\durfs\\durango\\TestContent\\graphics\\directxtex\\media\\"
+#define TEX_MEDIA_PATH L"D:\\Microsoft\\directxtexmedia\\"
 
 #define TEMP_PATH L"%TEMP%\\"
