@@ -22,7 +22,7 @@
     <ProjectGuid>{240C940F-C975-43F1-8E72-5B912F258E11}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>xtuvatlas</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
