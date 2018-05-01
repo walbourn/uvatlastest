@@ -148,7 +148,7 @@ bool Test08()
         size_t nVerts = mesh->vertices.size();
 
 #ifdef _DEBUG
-        char output[ 256 ] = { 0 };
+        char output[ 256 ] = {};
         sprintf_s( output, "INFO: %zu verts, %zu faces\n", nVerts, nFaces );
         OutputDebugStringA( output );
 #endif
