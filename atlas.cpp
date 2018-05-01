@@ -218,7 +218,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16]\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -268,7 +268,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] (2)\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] (2)\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -318,7 +318,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 7 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] FAST\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] FAST\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -368,7 +368,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] QUALITY\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] QUALITY\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -418,7 +418,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 3 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxchartnumber\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxchartnumber\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -469,7 +469,7 @@ bool Test01()
                  || numCharts < 3 || numCharts > 4
                  || maxStretch > 0.025f )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxstretch\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxstretch\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -519,7 +519,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] gutter\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] gutter\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -569,7 +569,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] feadj\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] feadj\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -619,7 +619,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 7 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] imt\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] imt\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -668,7 +668,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] facePartitioning null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] facePartitioning null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -712,7 +712,7 @@ bool Test01()
                  || facePart.size() != 12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] remap null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] remap null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -752,7 +752,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxStretchOut null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxStretchOut null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), numCharts );
                 success = false;
             }
@@ -801,7 +801,7 @@ bool Test01()
                  || facePart.size() != 12
                  || remap.size() != vb.size() )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube16] numChartsOut null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube16] numChartsOut null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch );
                 success = false;
             }
@@ -854,7 +854,7 @@ bool Test01()
                  || remap.size() != vb.size()
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create atlas [fmcube32]\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create atlas [fmcube32]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -978,7 +978,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16]\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1032,7 +1032,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] (2)\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] (2)\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1085,7 +1085,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 7 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] FAST\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] FAST\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1139,7 +1139,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] QUALITY\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] QUALITY\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1193,7 +1193,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 3 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] maxchartnumber\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] maxchartnumber\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1248,7 +1248,7 @@ bool Test02()
                  || numCharts < 3 || numCharts > 4
                  || maxStretch > 0.025f )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] maxstretch\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] maxstretch\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1302,7 +1302,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] gutter\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] gutter\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1356,7 +1356,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] feadj\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] feadj\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1410,7 +1410,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 7 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] imt\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] imt\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1463,7 +1463,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] facePartitioning null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] facePartitioning null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1511,7 +1511,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] remap null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] remap null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
                 success = false;
             }
@@ -1560,7 +1560,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] maxStretchOut null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] maxStretchOut null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), numCharts );
                 success = false;
             }
@@ -1613,7 +1613,7 @@ bool Test02()
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube16] numChartsOut null\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube16] numChartsOut null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch );
                 success = false;
             }
@@ -1671,7 +1671,7 @@ bool Test02()
                  || resultAdj.size() != 3*12
                  || numCharts != 4 )
             {
-                printe( "\nERROR: Unexpected results from create partition [fmcube32]\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+                printe( "\nERROR: Unexpected results from create partition [fmcube32]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
                 success = false;
             }

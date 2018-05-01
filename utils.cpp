@@ -132,7 +132,7 @@ bool Test09()
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) shuffle failed (%08X)\n", hr );
-            printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+            printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
         else
@@ -143,7 +143,7 @@ bool Test09()
                 if ( !IsTestVBCorrect32( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) shuffle failed\n" );
-                    printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+                    printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
                     success = false;
                     break;
                 }
@@ -231,7 +231,7 @@ bool Test09()
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) shuffle failed (%08X)\n", hr );
-            printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+            printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
         else
@@ -242,7 +242,7 @@ bool Test09()
                 if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) shuffle failed\n" );
-                    printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+                    printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
                     success = false;
                     break;
                 }
@@ -278,7 +278,7 @@ bool Test09()
             success = false;
             for( size_t j = 0; j < 24; ++j )
             {
-                printe("\t%Iu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );  
+                printe("\t%zu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );  
             }
         }
     }
@@ -413,7 +413,7 @@ bool Test10()
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(32) dups shuffle failed (%08X)\n", hr );
-            printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+            printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
         else
@@ -424,7 +424,7 @@ bool Test10()
                 if ( !IsTestVBCorrect32( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(32) dups shuffle failed\n" );
-                    printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+                    printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
                     success = false;
                     break;
                 }
@@ -553,7 +553,7 @@ bool Test10()
         if ( FAILED(hr) )
         {
             printe("\nERROR: UVAtlasApplyRemap(16) dups shuffle failed (%08X)\n", hr );
-            printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+            printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
         else
@@ -564,7 +564,7 @@ bool Test10()
                 if ( !IsTestVBCorrect16( ptr, remap[j] ) )
                 {
                     printe("\nERROR: UVAtlasApplyRemap(16) dups shuffle failed\n" );
-                    printe("\t[%Iu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
+                    printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
                     success = false;
                     break;
                 }
@@ -602,7 +602,7 @@ bool Test10()
             success = false;
             for( size_t j = 0; j < 28; ++j )
             {
-                printe("\t%Iu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );  
+                printe("\t%zu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );  
             }
         }
     }

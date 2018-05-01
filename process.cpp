@@ -149,7 +149,7 @@ bool Test08()
 
 #ifdef _DEBUG
         char output[ 256 ] = { 0 };
-        sprintf_s( output, "INFO: %Iu verts, %Iu faces\n", nVerts, nFaces );
+        sprintf_s( output, "INFO: %zu verts, %zu faces\n", nVerts, nFaces );
         OutputDebugStringA( output );
 #endif
 
@@ -206,7 +206,7 @@ bool Test08()
                   || remap.size() != vb.size()
                   || !numCharts )
         {
-            printe( "\nERROR: Unexpected results from create atlas:\n%S\n\tverts %Iu\n\tfaces %Iu (%Iu bytes)\n\tface partitions %Iu\n\tremap array %Iu\n\tmaxStretch %f\n\tnumCharts %Iu\n",
+            printe( "\nERROR: Unexpected results from create atlas:\n%S\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                     szPath, vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
             success = false;
         }
@@ -239,7 +239,7 @@ bool Test08()
         ++npass;
     }
 
-    print("\n%Iu meshes tested, %Iu meshes passed ", ncount, npass );
+    print("\n%zu meshes tested, %zu meshes passed ", ncount, npass );
 
     return success;
 }
