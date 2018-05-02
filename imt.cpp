@@ -71,7 +71,7 @@ static HRESULT LoadTextureF32( const wchar_t* fname, std::unique_ptr<float[]>& t
     if ( !fname )
         return E_INVALIDARG;
 
-    wchar_t szPath[MAX_PATH];
+    wchar_t szPath[MAX_PATH] = {};
     DWORD ret = ExpandEnvironmentStringsW( fname, szPath, MAX_PATH );
     if ( !ret || ret > MAX_PATH )  
     {  

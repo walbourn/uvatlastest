@@ -105,7 +105,7 @@ bool Test08()
 
     for( size_t index=0; index < _countof(g_TestMedia); ++index )
     {
-        wchar_t szPath[MAX_PATH];
+        wchar_t szPath[MAX_PATH] = {};
         DWORD ret = ExpandEnvironmentStringsW( g_TestMedia[index].fname, szPath, MAX_PATH );
         if ( !ret || ret > MAX_PATH )  
         {  
