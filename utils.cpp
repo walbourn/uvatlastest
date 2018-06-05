@@ -259,7 +259,7 @@ bool Test09()
         std::unique_ptr<uint32_t[]> destvb( new uint32_t[ 24 ] );
         memset( destvb.get(), 0xff, sizeof(uint32_t) * 24 );
 
-        const static uint32_t s_remap[] = { 3, 1, 0, 2,
+        static const uint32_t s_remap[] = { 3, 1, 0, 2,
                                             6, 4, 5, 7,
                                             11, 9, 8, 10,
                                             14, 12, 13, 15,
@@ -582,7 +582,7 @@ bool Test10()
         std::unique_ptr<uint32_t[]> destvb( new uint32_t[ 28 ] );
         memset( destvb.get(), 0xff, sizeof(uint32_t) * 28 );
 
-        const static uint32_t s_remap[] = { 3, 1, 0, 2,
+        static const uint32_t s_remap[] = { 3, 1, 0, 2,
                                             6, 4, 5, 7,
                                             11, 9, 8, 10,
                                             14, 12, 13, 15,
