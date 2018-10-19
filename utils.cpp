@@ -20,6 +20,9 @@ bool Test09()
 {
     bool success = true;
 
+    std::random_device rd;
+    std::default_random_engine rng(rd());
+
     // Identity (32)
     {
         auto srcvb = CreateVertexBuffer32( 65535, VB_IDENTITY );
@@ -124,7 +127,7 @@ bool Test09()
         for( uint32_t j = 0; j < 65535; ++j )
             remap.push_back( j );
 
-        std::random_shuffle( remap.begin(), remap.end() );
+        std::shuffle(std::begin(remap), std::end(remap), rng);
 
         auto destvb = CreateVertexBuffer( 32, 65535 );
 
@@ -223,7 +226,7 @@ bool Test09()
         for( uint32_t j = 0; j < 65535; ++j )
             remap.push_back( j );
 
-        std::random_shuffle( remap.begin(), remap.end() );
+        std::shuffle(std::begin(remap), std::end(remap), rng);
 
         auto destvb = CreateVertexBuffer( 16, 65535 );
 
@@ -292,6 +295,9 @@ bool Test09()
 bool Test10()
 {
     bool success = true;
+
+    std::random_device rd;
+    std::default_random_engine rng(rd());
 
     // Identity (32)
     {
@@ -405,7 +411,7 @@ bool Test10()
         for( uint32_t j = 0; j < 256; ++j )
             remap.push_back( j );
 
-        std::random_shuffle( remap.begin(), remap.end() );
+        std::shuffle(std::begin(remap), std::end(remap), rng);
 
         auto destvb = CreateVertexBuffer( 32, 65535 + 256 );
 
@@ -545,7 +551,7 @@ bool Test10()
         for( uint32_t j = 0; j < 256; ++j )
             remap.push_back( j );
 
-        std::random_shuffle( remap.begin(), remap.end() );
+        std::shuffle(std::begin(remap), std::end(remap), rng);
 
         auto destvb = CreateVertexBuffer( 16, 65535 + 256 );
 
