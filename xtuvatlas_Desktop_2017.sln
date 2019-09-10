@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xtuvatlas_Desktop_2017", "xtuvatlas_Desktop_2017.vcxproj", "{240C940F-C975-43F1-8E72-5B912F258E11}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UVAtlas_2017", "..\UVAtlas\UVAtlas_2017_Win10.vcxproj", "{10359E70-6A7F-4433-8EF1-B0FB688D830E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UVAtlas_2017_Win10", "..\UVAtlas\UVAtlas_2017_Win10.vcxproj", "{10359E70-6A7F-4433-8EF1-B0FB688D830E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectXMesh", "..\..\DirectXMesh\DirectXMesh\DirectXMesh_Desktop_2017.vcxproj", "{6857F086-F6FE-4150-9ED7-7446F1C1C220}"
 EndProject
@@ -25,14 +25,17 @@ Global
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Debug|Win32.Build.0 = Debug|Win32
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Debug|Win32.Deploy.0 = Debug|Win32
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Debug|x64.ActiveCfg = Debug|x64
+		{240C940F-C975-43F1-8E72-5B912F258E11}.Debug|x64.Build.0 = Debug|x64
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Profile|Win32.ActiveCfg = Release|Win32
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Profile|Win32.Build.0 = Release|Win32
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Profile|Win32.Deploy.0 = Release|Win32
-		{240C940F-C975-43F1-8E72-5B912F258E11}.Profile|x64.ActiveCfg = Release|Win32
+		{240C940F-C975-43F1-8E72-5B912F258E11}.Profile|x64.ActiveCfg = Release|x64
+		{240C940F-C975-43F1-8E72-5B912F258E11}.Profile|x64.Build.0 = Release|x64
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Release|Win32.ActiveCfg = Release|Win32
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Release|Win32.Build.0 = Release|Win32
 		{240C940F-C975-43F1-8E72-5B912F258E11}.Release|Win32.Deploy.0 = Release|Win32
-		{240C940F-C975-43F1-8E72-5B912F258E11}.Release|x64.ActiveCfg = Release|Win32
+		{240C940F-C975-43F1-8E72-5B912F258E11}.Release|x64.ActiveCfg = Release|x64
+		{240C940F-C975-43F1-8E72-5B912F258E11}.Release|x64.Build.0 = Release|x64
 		{10359E70-6A7F-4433-8EF1-B0FB688D830E}.Debug|Win32.ActiveCfg = Debug|Win32
 		{10359E70-6A7F-4433-8EF1-B0FB688D830E}.Debug|Win32.Build.0 = Debug|Win32
 		{10359E70-6A7F-4433-8EF1-B0FB688D830E}.Debug|Win32.Deploy.0 = Debug|Win32
@@ -90,5 +93,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69C9CA5E-4F0D-4A1B-8E65-C9F21F9022C5}
 	EndGlobalSection
 EndGlobal
