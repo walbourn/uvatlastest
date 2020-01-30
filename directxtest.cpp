@@ -34,6 +34,7 @@ extern bool Test07();
 extern bool Test08();
 extern bool Test09();
 extern bool Test10();
+extern bool Test11();
 
 TestInfo g_Tests[] =
 {
@@ -46,7 +47,8 @@ TestInfo g_Tests[] =
     { "UVAtlasComputeIMTFromSignal", Test05 },
     { "UVAtlasComputeIMTFromTexture", Test06 },
     { "UVAtlasComputeIMTFromPerTexelSignal", Test07 },
-    { "MeshProcess", Test08 },
+    { "MeshProcess(16)", Test08 },
+    { "MeshProcess(32)", Test11 },
 };
 
 
