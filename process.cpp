@@ -36,6 +36,7 @@ static const TestMedia g_TestMedia16[] =
 static const TestMedia g_TestMedia32[] =
 {
     // filename
+    { MESH_MEDIA_PATH L"Head_Big_Ears._obj",     },
     { MESH_MEDIA_PATH L"John40k._obj",           },
 };
 
