@@ -147,7 +147,7 @@ bool Test08()
         if ( FAILED(hr) )
         {
             success = false;
-            printe( "ERROR: Failed loading mesh data (%08X):\n%S\n", hr, szPath );
+            printe( "ERROR: Failed loading mesh data (%08X):\n%S\n", static_cast<unsigned int>(hr), szPath );
             continue;
         }
 
@@ -165,7 +165,7 @@ bool Test08()
         if ( FAILED(hr) )
         {
             success = false;
-            printe( "ERROR: Failed Validate mesh data (%08X):\n%S\n%S\n", hr, szPath, msgs.c_str() );
+            printe( "ERROR: Failed Validate mesh data (%08X):\n%S\n%S\n", static_cast<unsigned int>(hr), szPath, msgs.c_str() );
             continue;
         }
 
@@ -188,7 +188,7 @@ bool Test08()
         if ( FAILED(hr) )
         {
             success = false;
-            printe("ERROR: failed GenerateAdjacencyAndPointReps (%08X)\n:%S\n", hr, szPath );
+            printe("ERROR: failed GenerateAdjacencyAndPointReps (%08X)\n:%S\n", static_cast<unsigned int>(hr), szPath );
             continue;
         }
 
@@ -204,7 +204,7 @@ bool Test08()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas failed (%08X)\n%S\n", hr, szPath );
+            printe( "\nERROR: create atlas failed (%08X)\n%S\n", static_cast<unsigned int>(hr), szPath );
             success = false;
         }
         else if ( vb.size() < nVerts
@@ -238,7 +238,7 @@ bool Test08()
             hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
             if ( FAILED(hr)) 
             {
-                printe( "\nERROR: Invalid index buffer from create atlas (%08X):\n%S\n%S\n", hr, szPath, msgs.c_str() );
+                printe( "\nERROR: Invalid index buffer from create atlas (%08X):\n%S\n%S\n", static_cast<unsigned int>(hr), szPath, msgs.c_str() );
                 success = false;
             }
         }
@@ -299,7 +299,7 @@ bool Test11()
         if (FAILED(hr))
         {
             success = false;
-            printe("ERROR: Failed loading mesh data (%08X):\n%S\n", hr, szPath);
+            printe("ERROR: Failed loading mesh data (%08X):\n%S\n", static_cast<unsigned int>(hr), szPath);
             continue;
         }
 
@@ -317,7 +317,7 @@ bool Test11()
         if (FAILED(hr))
         {
             success = false;
-            printe("ERROR: Failed Validate mesh data (%08X):\n%S\n%S\n", hr, szPath, msgs.c_str());
+            printe("ERROR: Failed Validate mesh data (%08X):\n%S\n%S\n", static_cast<unsigned int>(hr), szPath, msgs.c_str());
             continue;
         }
 
@@ -340,7 +340,7 @@ bool Test11()
         if (FAILED(hr))
         {
             success = false;
-            printe("ERROR: failed GenerateAdjacencyAndPointReps (%08X)\n:%S\n", hr, szPath);
+            printe("ERROR: failed GenerateAdjacencyAndPointReps (%08X)\n:%S\n", static_cast<unsigned int>(hr), szPath);
             continue;
         }
 
@@ -356,7 +356,7 @@ bool Test11()
             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts);
         if (FAILED(hr))
         {
-            printe("\nERROR: create atlas failed (%08X)\n%S\n", hr, szPath);
+            printe("\nERROR: create atlas failed (%08X)\n%S\n", static_cast<unsigned int>(hr), szPath);
             success = false;
         }
         else if (vb.size() < nVerts
@@ -390,7 +390,7 @@ bool Test11()
             hr = Validate(reinterpret_cast<const uint32_t*>(ib.data()), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs);
             if (FAILED(hr))
             {
-                printe("\nERROR: Invalid index buffer from create atlas (%08X):\n%S\n%S\n", hr, szPath, msgs.c_str());
+                printe("\nERROR: Invalid index buffer from create atlas (%08X):\n%S\n%S\n", static_cast<unsigned int>(hr), szPath, msgs.c_str());
                 success = false;
             }
         }

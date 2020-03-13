@@ -229,7 +229,7 @@ bool Test04()
                                                    nullptr /*one case without callback*/, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from normals [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from normals [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -261,7 +261,7 @@ bool Test04()
                                                    UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from normals (2) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from normals (2) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -293,7 +293,7 @@ bool Test04()
                                                    UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from normals (1) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from normals (1) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -327,7 +327,7 @@ bool Test04()
                                                    UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from normals [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from normals [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -359,7 +359,7 @@ bool Test04()
                                                    UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from normals (2) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from normals (2) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -391,7 +391,7 @@ bool Test04()
                                                    UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from normals (1) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from normals (1) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -508,7 +508,7 @@ bool Test05()
                                           4, 0.f, signalFunc, nullptr, nullptr /*one case without callback*/, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -541,7 +541,7 @@ bool Test05()
         g_expectedUserData = nullptr;
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (userdata) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (userdata) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -572,7 +572,7 @@ bool Test05()
                                           3, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (3) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (3) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -603,7 +603,7 @@ bool Test05()
                                           2, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (2) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (2) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -634,7 +634,7 @@ bool Test05()
                                           3, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (1) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (1) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -667,7 +667,7 @@ bool Test05()
                                           4, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -700,7 +700,7 @@ bool Test05()
         g_expectedUserData = nullptr;
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (userdata) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (userdata) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -731,7 +731,7 @@ bool Test05()
                                           3, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (3) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (3) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -762,7 +762,7 @@ bool Test05()
                                           2, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (2) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (2) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -793,7 +793,7 @@ bool Test05()
                                           3, 0.f, signalFunc, nullptr, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from func (1) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from func (1) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -832,7 +832,7 @@ bool Test06()
     HRESULT hr = LoadTextureF32( TEX_MEDIA_PATH L"reftexture.dds", texDefault, texDefaultW, texDefaultH );
     if ( FAILED(hr))
     {
-        printe( "\nERROR: Failed loading 'reftexture.dds' (%08X)\n", hr );
+        printe( "\nERROR: Failed loading 'reftexture.dds' (%08X)\n", static_cast<unsigned int>(hr) );
         return false;
     }
 
@@ -894,7 +894,7 @@ bool Test06()
                                            UVATLAS_IMT_DEFAULT, nullptr /*one case without callback*/, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -928,7 +928,7 @@ bool Test06()
                                            UVATLAS_IMT_WRAP_U, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap u failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap u failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -960,7 +960,7 @@ bool Test06()
                                            UVATLAS_IMT_WRAP_V, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap v failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap v failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -992,7 +992,7 @@ bool Test06()
                                            UVATLAS_IMT_WRAP_UV, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap uv failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap uv failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1026,7 +1026,7 @@ bool Test06()
                                            UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1060,7 +1060,7 @@ bool Test06()
                                            UVATLAS_IMT_WRAP_U, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap u failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap u failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1092,7 +1092,7 @@ bool Test06()
                                            UVATLAS_IMT_WRAP_V, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap v failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap v failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1124,7 +1124,7 @@ bool Test06()
                                            UVATLAS_IMT_WRAP_UV, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap uv failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap uv failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1163,7 +1163,7 @@ bool Test07()
     HRESULT hr = LoadTextureF32( TEX_MEDIA_PATH L"reftexture.dds", texDefault, texDefaultW, texDefaultH );
     if ( FAILED(hr))
     {
-        printe( "\nERROR: Failed loading 'reftexture.dds' (%08X)\n", hr );
+        printe( "\nERROR: Failed loading 'reftexture.dds' (%08X)\n", static_cast<unsigned int>(hr) );
         return false;
     }
 
@@ -1236,7 +1236,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, nullptr /*one case without callback*/, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1268,7 +1268,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' (3) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' (3) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1300,7 +1300,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' (2) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' (2) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1332,7 +1332,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' (1) [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' (1) [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1366,7 +1366,7 @@ bool Test07()
                                                   UVATLAS_IMT_WRAP_U, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap u failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap u failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1398,7 +1398,7 @@ bool Test07()
                                                   UVATLAS_IMT_WRAP_V, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap v failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap v failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1430,7 +1430,7 @@ bool Test07()
                                                   UVATLAS_IMT_WRAP_UV, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap uv failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube16] wrap uv failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1464,7 +1464,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1496,7 +1496,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' (3) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' (3) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1528,7 +1528,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' (2) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' (2) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1560,7 +1560,7 @@ bool Test07()
                                                   UVATLAS_IMT_DEFAULT, UVAtlasCallback, imtArray.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' (1) [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' (1) [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1594,7 +1594,7 @@ bool Test07()
                                                   UVATLAS_IMT_WRAP_U, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap u failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap u failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1626,7 +1626,7 @@ bool Test07()
                                                   UVATLAS_IMT_WRAP_V, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap v failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap v failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1658,7 +1658,7 @@ bool Test07()
                                                   UVATLAS_IMT_WRAP_UV, UVAtlasCallback, imtWrap.get() );
         if ( FAILED(hr) )
         {
-            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap uv failed (%08X)\n", hr );
+            printe( "\nERROR: imt from 'refexture.dds' [fmcube32] wrap uv failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else

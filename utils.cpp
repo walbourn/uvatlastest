@@ -37,7 +37,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(32) identity failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(32) identity failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( !IsTestVBCorrect32( destvb.get(), 65535, VB_IDENTITY ) )
@@ -73,21 +73,21 @@ bool Test09()
         hr = UVAtlasApplyRemap( srcvb.get(), UINT32_MAX, 65535, 65535, remap.data(), destvb.get() );
         if ( hr != E_INVALIDARG )
         {
-            printe("\nERROR: UVAtlasApplyRemap expected failure for bad stride value (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap expected failure for bad stride value (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
 
         hr = UVAtlasApplyRemap( srcvb.get(), 32, UINT32_MAX, UINT32_MAX, remap.data(), destvb.get() );
         if ( hr != E_INVALIDARG )
         {
-            printe("\nERROR: UVAtlasApplyRemap expected failure for 32-max value verts (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap expected failure for 32-max value verts (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
 
         hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 256, remap.data(), destvb.get() );
         if ( hr != E_INVALIDARG )
         {
-            printe("\nERROR: UVAtlasApplyRemap expected failure for newnverts < verts (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap expected failure for newnverts < verts (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         #pragma warning(pop)
@@ -107,7 +107,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(32) reverse failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(32) reverse failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( !IsTestVBCorrect32( destvb.get(), 65535, VB_REVERSE ) )
@@ -134,7 +134,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(32) shuffle failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(32) shuffle failed (%08X)\n", static_cast<unsigned int>(hr) );
             printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
@@ -168,7 +168,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(16) identity failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(16) identity failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( !IsTestVBCorrect16( destvb.get(), 65535, VB_IDENTITY ) )
@@ -206,7 +206,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(16) reverse failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(16) reverse failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( !IsTestVBCorrect16( destvb.get(), 65535, VB_REVERSE ) )
@@ -233,7 +233,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(16) shuffle failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(16) shuffle failed (%08X)\n", static_cast<unsigned int>(hr) );
             printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
@@ -272,7 +272,7 @@ bool Test09()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), sizeof(uint32_t), 24, 24, s_remap, destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("ERROR: UVAtlasApplyRemap fmcube failed (%08X)\n", hr );
+            printe("ERROR: UVAtlasApplyRemap fmcube failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( memcmp( destvb.get(), s_remap, sizeof(s_remap) ) != 0 )
@@ -316,7 +316,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(32) dups identity failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(32) dups identity failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( !IsTestVBCorrect32( destvb.get(), 65535, VB_IDENTITY ) )
@@ -368,7 +368,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(32) dups reverse failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(32) dups reverse failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -418,7 +418,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 32, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(32) dups shuffle failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(32) dups shuffle failed (%08X)\n", static_cast<unsigned int>(hr) );
             printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
@@ -456,7 +456,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(16) dups identity failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(16) dups identity failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( !IsTestVBCorrect16( destvb.get(), 65535, VB_IDENTITY ) )
@@ -508,7 +508,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(16) dups reverse failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(16) dups reverse failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -558,7 +558,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), 16, 65535, 65535 + 256, remap.data(), destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("\nERROR: UVAtlasApplyRemap(16) dups shuffle failed (%08X)\n", hr );
+            printe("\nERROR: UVAtlasApplyRemap(16) dups shuffle failed (%08X)\n", static_cast<unsigned int>(hr) );
             printe("\t[%zu] %u %u %u .. %u %u %u\n", retry, remap[0], remap[1], remap[2], remap[65532], remap[65533], remap[65534] );
             success = false;
         }
@@ -599,7 +599,7 @@ bool Test10()
         HRESULT hr = UVAtlasApplyRemap( srcvb.get(), sizeof(uint32_t), 24, 28, s_remap, destvb.get() );
         if ( FAILED(hr) )
         {
-            printe("ERROR: UVAtlasApplyRemap dups fmcube failed (%08X)\n", hr );
+            printe("ERROR: UVAtlasApplyRemap dups fmcube failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else if ( memcmp( destvb.get(), s_remap, sizeof(s_remap) ) != 0 )

@@ -206,7 +206,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -243,7 +243,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -256,7 +256,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] (2) failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] (2) failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -293,7 +293,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (2) (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (2) (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -306,7 +306,7 @@ bool Test01()
                             UVATLAS_GEODESIC_FAST, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] FAST failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] FAST failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -343,7 +343,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] FAST (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] FAST (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -356,7 +356,7 @@ bool Test01()
                             UVATLAS_GEODESIC_QUALITY, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] QUALITY failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] QUALITY failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -393,7 +393,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] QUALITY (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -406,7 +406,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] maxchartnumber failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] maxchartnumber failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -443,7 +443,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxchartnumber (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxchartnumber (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -456,7 +456,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] maxstretch failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] maxstretch failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -494,7 +494,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxstretch (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxstretch (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -507,7 +507,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] gutter failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] gutter failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -544,7 +544,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] gutter (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] gutter (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -557,7 +557,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] feadj failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] feadj failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -594,7 +594,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] feadj (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] feadj (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -607,7 +607,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] imt failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] imt failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -644,7 +644,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] imt (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] imt (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -657,7 +657,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, nullptr, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] facePartitioning null failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] facePartitioning null failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -688,7 +688,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] facePartitioning null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] facePartitioning null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -701,7 +701,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, nullptr, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] remap null (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] remap null (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -727,7 +727,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] remap null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] remap null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -740,7 +740,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, nullptr, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] maxStretchOut null failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] maxStretchOut null failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -777,7 +777,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxStretchOut null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxStretchOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -790,7 +790,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, nullptr );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube16] numChartsOut null failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube16] numChartsOut null failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -821,7 +821,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] numChartsOut null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] numChartsOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -842,7 +842,7 @@ bool Test01()
                             UVATLAS_DEFAULT, vb, ib, &facePart, &remap, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create atlas [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: create atlas [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -879,7 +879,7 @@ bool Test01()
                 hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube32] (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create atlas [fmcube32] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -965,7 +965,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -998,7 +998,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1006,7 +1006,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1019,7 +1019,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] (2) failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] (2) failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1052,14 +1052,14 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (2) (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (2) (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] (2) (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] (2) (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1072,7 +1072,7 @@ bool Test02()
                                UVATLAS_GEODESIC_FAST, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] FAST failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] FAST failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1105,7 +1105,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] FAST (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] FAST (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1113,7 +1113,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] FAST (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] FAST (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1126,7 +1126,7 @@ bool Test02()
                                UVATLAS_GEODESIC_QUALITY, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] QUALITY failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] QUALITY failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1159,7 +1159,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] QUALITY (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1167,7 +1167,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] QUALITY (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1180,7 +1180,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] maxchartnumber failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] maxchartnumber failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1213,7 +1213,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxchartnumber (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxchartnumber (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1221,7 +1221,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxchartnumber (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxchartnumber (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1234,7 +1234,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] maxstretch failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] maxstretch failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1268,7 +1268,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxstretch (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxstretch (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1276,7 +1276,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxstretch (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxstretch (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1289,7 +1289,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] gutter failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] gutter failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1322,7 +1322,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] gutter (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] gutter (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1330,7 +1330,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] gutter (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] gutter (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1343,7 +1343,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] feadj failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] feadj failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1376,7 +1376,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] feadj (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] feadj (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1384,7 +1384,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] feadj (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] feadj (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1397,7 +1397,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] imt failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] imt failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1430,7 +1430,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] imt (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] imt (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1438,7 +1438,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] imt (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] imt (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1451,7 +1451,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, nullptr, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] facePartitioning null failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] facePartitioning null failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1478,7 +1478,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] facePartitioning null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] facePartitioning null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1486,7 +1486,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] facePartitioning null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] facePartitioning null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1499,7 +1499,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, nullptr, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] remap null (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] remap null (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1526,7 +1526,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] remap null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] remap null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1534,7 +1534,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] remap null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] remap null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1547,7 +1547,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, nullptr, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] maxStretchOut null failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] maxStretchOut null failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1580,7 +1580,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxStretchOut null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxStretchOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1588,7 +1588,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxStretchOut null(%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxStretchOut null(%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1601,7 +1601,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, nullptr );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube16] numChartsOut null failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube16] numChartsOut null failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1628,7 +1628,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] numChartsOut null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube16] numChartsOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1636,7 +1636,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] numChartsOut null (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube16] numChartsOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1658,7 +1658,7 @@ bool Test02()
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if (FAILED(hr))
         {
-            printe( "\nERROR: create partition [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: create partition [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
         else
@@ -1691,7 +1691,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid index buffer from create partition [fmcube32] (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid index buffer from create partition [fmcube32] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
 
@@ -1699,7 +1699,7 @@ bool Test02()
                 hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
                 if ( FAILED(hr)) 
                 {
-                    printe( "\nERROR: Invalid result adj from create partition [fmcube32] (%08X):%S\n", hr, msgs.c_str() );
+                    printe( "\nERROR: Invalid result adj from create partition [fmcube32] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
@@ -1850,7 +1850,7 @@ bool Test03()
                           resultAdj, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY );
         if (FAILED(hr))
         {
-            printe( "\nERROR: packing [fmcube16] failed (%08X)\n", hr );
+            printe( "\nERROR: packing [fmcube16] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
     }
@@ -1874,7 +1874,7 @@ bool Test03()
                           resultAdj, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY );
         if (FAILED(hr))
         {
-            printe( "\nERROR: packing [fmcube32] failed (%08X)\n", hr );
+            printe( "\nERROR: packing [fmcube32] failed (%08X)\n", static_cast<unsigned int>(hr) );
             success = false;
         }
     }

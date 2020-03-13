@@ -97,7 +97,7 @@ int __cdecl main()
     HRESULT hr = CoInitializeEx( NULL, COINIT_MULTITHREADED );
     if ( FAILED(hr) )
     {
-        printe("ERROR: CoInitializeEx fails (%08X)\n", hr); 
+        printe("ERROR: CoInitializeEx fails (%08X)\n", static_cast<unsigned int>(hr)); 
         return -1;
     }
 
