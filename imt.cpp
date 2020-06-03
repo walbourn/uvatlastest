@@ -111,7 +111,7 @@ static HRESULT LoadTextureF32( const wchar_t* fname, std::unique_ptr<float[]>& t
     }
     else
     {
-        hr = LoadFromWICFile(szPath, WIC_FILTER_NONE, nullptr, image);
+        hr = LoadFromWICFile(szPath, WIC_FLAGS_NONE, nullptr, image);
     }
     if (FAILED(hr))
         return hr;
