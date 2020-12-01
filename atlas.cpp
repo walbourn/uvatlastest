@@ -399,6 +399,105 @@ bool Test01()
             }
         }
 
+        // UVATLAS_LIMIT_MERGE_STRETCH
+        hr = UVAtlasCreate(g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
+            0, 0.f, 512, 512, 1.f,
+            s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
+            UVATLAS_LIMIT_MERGE_STRETCH, vb, ib, &facePart, &remap, &maxStretch, &numCharts);
+        if (FAILED(hr))
+        {
+            printe("\nERROR: create atlas [fmcube16] LIMIT_MERGE_STRETCH failed (%08X)\n", static_cast<unsigned int>(hr));
+            success = false;
+        }
+        else
+        {
+            size_t nFaces = ib.size() / (sizeof(uint16_t) * 3);
+            if (vb.size() < 26 || vb.size() > 30
+                || nFaces != 12
+                || facePart.size() != 12
+                || remap.size() != vb.size()
+                || numCharts != 4)
+            {
+                printe("\nERROR: Unexpected results from create atlas [fmcube16] LIMIT_MERGE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
+                    vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
+                success = false;
+            }
+            else if (!IsValidVertexRemap(reinterpret_cast<const uint16_t*>(ib.data()), 12, remap.data(), vb.size(), true))
+            {
+                printe("\nERROR: Vertex remap invalid from create atlas [fmcube16] LIMIT_MERGE_STRETCH\n");
+                success = false;
+            }
+            else if (!IsValidFacePartition(facePart.data(), 12, numCharts))
+            {
+                printe("\nERROR: Face partition invalid from create atlas [fmcube16] LIMIT_MERGE_STRETCH\n");
+                success = false;
+            }
+            else if (!VerifyVertices(g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size()))
+            {
+                printe("\nERROR: Vertex data doesn't match remap [fmcube16] LIMIT_MERGE_STRETCH\n");
+                success = false;
+            }
+            else
+            {
+                std::wstring msgs;
+                hr = Validate(reinterpret_cast<const uint16_t*>(ib.data()), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs);
+                if (FAILED(hr))
+                {
+                    printe("\nERROR: Invalid index buffer from create atlas [fmcube16] LIMIT_MERGE_STRETCH (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str());
+                    success = false;
+                }
+            }
+        }
+
+        // UVATLAS_LIMIT_FACE_STRETCH
+        hr = UVAtlasCreate(g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
+            0, 0.f, 512, 512, 1.f,
+            s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
+            UVATLAS_LIMIT_FACE_STRETCH, vb, ib, &facePart, &remap, &maxStretch, &numCharts);
+        if (FAILED(hr))
+        {
+            printe("\nERROR: create atlas [fmcube16] LIMIT_FACE_STRETCH failed (%08X)\n", static_cast<unsigned int>(hr));
+            success = false;
+        }
+        else
+        {
+            size_t nFaces = ib.size() / (sizeof(uint16_t) * 3);
+            if (vb.size() < 26 || vb.size() > 30
+                || nFaces != 12
+                || facePart.size() != 12
+                || remap.size() != vb.size()
+                || numCharts != 7)
+            {
+                printe("\nERROR: Unexpected results from create atlas [fmcube16] LIMIT_FACE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
+                    vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
+                success = false;
+            }
+            else if (!IsValidVertexRemap(reinterpret_cast<const uint16_t*>(ib.data()), 12, remap.data(), vb.size(), true))
+            {
+                printe("\nERROR: Vertex remap invalid from create atlas [fmcube16] LIMIT_FACE_STRETCH\n");
+                success = false;
+            }
+            else if (!IsValidFacePartition(facePart.data(), 12, numCharts))
+            {
+                printe("\nERROR: Face partition invalid from create atlas [fmcube16] LIMIT_FACE_STRETCH\n");
+                success = false;
+            }
+            else if (!VerifyVertices(g_fmCubeVerts, 24, vb.data(), remap.data(), vb.size()))
+            {
+                printe("\nERROR: Vertex data doesn't match remap [fmcube16] LIMIT_FACE_STRETCH\n");
+                success = false;
+            }
+            else
+            {
+                std::wstring msgs;
+                hr = Validate(reinterpret_cast<const uint16_t*>(ib.data()), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs);
+                if (FAILED(hr))
+                {
+                    printe("\nERROR: Invalid index buffer from create atlas [fmcube16] LIMIT_FACE_STRETCH (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str());
+                    success = false;
+                }
+            }
+        }
         // maxchartnumber
         hr = UVAtlasCreate( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                             3, 0.f, 512, 512, 1.f,
@@ -1168,6 +1267,114 @@ bool Test02()
                 if ( FAILED(hr)) 
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
+                    success = false;
+                }
+            }
+        }
+
+        // UVATLAS_LIMIT_MERGE_STRETCH
+        hr = UVAtlasPartition(g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
+            0, 0.f,
+            s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
+            UVATLAS_LIMIT_MERGE_STRETCH, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts);
+        if (FAILED(hr))
+        {
+            printe("\nERROR: create partition [fmcube16] LIMIT_MERGE_STRETCH failed (%08X)\n", static_cast<unsigned int>(hr));
+            success = false;
+        }
+        else
+        {
+            size_t nFaces = ib.size() / (sizeof(uint16_t) * 3);
+            if (vb.size() < 26 || vb.size() > 30
+                || nFaces != 12
+                || facePart.size() != 12
+                || remap.size() != vb.size()
+                || resultAdj.size() != 3 * 12
+                || numCharts != 4)
+            {
+                printe("\nERROR: Unexpected results from create partition [fmcube16] LIMIT_MERGE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
+                    vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
+                success = false;
+            }
+            else if (!IsValidVertexRemap(reinterpret_cast<const uint16_t*>(ib.data()), 12, remap.data(), vb.size(), true))
+            {
+                printe("\nERROR: Vertex remap invalid from create partition [fmcube16] LIMIT_MERGE_STRETCH\n");
+                success = false;
+            }
+            else if (!IsValidFacePartition(facePart.data(), 12, numCharts))
+            {
+                printe("\nERROR: Face partition invalid from create partition [fmcube16] LIMIT_MERGE_STRETCH\n");
+                success = false;
+            }
+            else
+            {
+                std::wstring msgs;
+                hr = Validate(reinterpret_cast<const uint16_t*>(ib.data()), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs);
+                if (FAILED(hr))
+                {
+                    printe("\nERROR: Invalid index buffer from create partition [fmcube16] LIMIT_MERGE_STRETCH (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str());
+                    success = false;
+                }
+
+                msgs.clear();
+                hr = Validate(reinterpret_cast<const uint16_t*>(ib.data()), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs);
+                if (FAILED(hr))
+                {
+                    printe("\nERROR: Invalid result adj from create partition [fmcube16] LIMIT_MERGE_STRETCH (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str());
+                    success = false;
+                }
+            }
+        }
+
+        // UVATLAS_LIMIT_FACE_STRETCH
+        hr = UVAtlasPartition(g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
+            0, 0.f,
+            s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
+            UVATLAS_LIMIT_FACE_STRETCH, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts);
+        if (FAILED(hr))
+        {
+            printe("\nERROR: create partition [fmcube16] LIMIT_FACE_STRETCH failed (%08X)\n", static_cast<unsigned int>(hr));
+            success = false;
+        }
+        else
+        {
+            size_t nFaces = ib.size() / (sizeof(uint16_t) * 3);
+            if (vb.size() < 26 || vb.size() > 30
+                || nFaces != 12
+                || facePart.size() != 12
+                || remap.size() != vb.size()
+                || resultAdj.size() != 3 * 12
+                || numCharts != 7)
+            {
+                printe("\nERROR: Unexpected results from create partition [fmcube16] LIMIT_FACE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
+                    vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
+                success = false;
+            }
+            else if (!IsValidVertexRemap(reinterpret_cast<const uint16_t*>(ib.data()), 12, remap.data(), vb.size(), true))
+            {
+                printe("\nERROR: Vertex remap invalid from create partition [fmcube16] LIMIT_FACE_STRETCH\n");
+                success = false;
+            }
+            else if (!IsValidFacePartition(facePart.data(), 12, numCharts))
+            {
+                printe("\nERROR: Face partition invalid from create partition [fmcube16] LIMIT_FACE_STRETCH\n");
+                success = false;
+            }
+            else
+            {
+                std::wstring msgs;
+                hr = Validate(reinterpret_cast<const uint16_t*>(ib.data()), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs);
+                if (FAILED(hr))
+                {
+                    printe("\nERROR: Invalid index buffer from create partition [fmcube16] LIMIT_FACE_STRETCH (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str());
+                    success = false;
+                }
+
+                msgs.clear();
+                hr = Validate(reinterpret_cast<const uint16_t*>(ib.data()), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs);
+                if (FAILED(hr))
+                {
+                    printe("\nERROR: Invalid result adj from create partition [fmcube16] LIMIT_FACE_STRETCH (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str());
                     success = false;
                 }
             }
