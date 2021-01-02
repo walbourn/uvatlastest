@@ -18,15 +18,17 @@
 #pragma warning(pop)
 
 #define _CRTDBG_MAP_ALLOC
-#include <stdlib.h>
 #include <crtdbg.h>
-#include <stdio.h>
 
-#include <windows.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
+#include <iterator>
 
-#include <directxmath.h>
-#include <directxpackedvector.h>
+#include <Windows.h>
+
+#define _XM_NO_XMVECTOR_OVERLOADS_
+#include <DirectXMath.h>
+#include <DirectXPackedVector.h>
 
 #define _DIRECTX_TEST_NAME_ "UVAtlas"
 

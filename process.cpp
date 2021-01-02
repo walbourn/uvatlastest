@@ -110,7 +110,7 @@ bool Test08()
     size_t ncount = 0;
     size_t npass = 0;
 
-    for( size_t index=0; index < _countof(g_TestMedia16); ++index )
+    for( size_t index=0; index < std::size(g_TestMedia16); ++index )
     {
         wchar_t szPath[MAX_PATH] = {};
         DWORD ret = ExpandEnvironmentStringsW( g_TestMedia16[index].fname, szPath, MAX_PATH );
@@ -262,7 +262,7 @@ bool Test11()
     size_t ncount = 0;
     size_t npass = 0;
 
-    for (size_t index = 0; index < _countof(g_TestMedia32); ++index)
+    for (size_t index = 0; index < std::size(g_TestMedia32); ++index)
     {
         wchar_t szPath[MAX_PATH] = {};
         DWORD ret = ExpandEnvironmentStringsW(g_TestMedia32[index].fname, szPath, MAX_PATH);

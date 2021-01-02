@@ -2007,7 +2007,7 @@ bool Test03()
     #pragma warning(disable : 6387)
     {
         std::vector<UVAtlasVertex> vb;
-        vb.resize( _countof(s_vb ) );
+        vb.resize( std::size(s_vb ) );
         memcpy( vb.data(), s_vb, sizeof(s_vb) );
 
         std::vector<uint8_t> ib;
@@ -2041,7 +2041,7 @@ bool Test03()
     // 16-bit cube
     {
         std::vector<UVAtlasVertex> vb;
-        vb.resize( _countof(s_vb ) );
+        vb.resize( std::size(s_vb ) );
         memcpy( vb.data(), s_vb, sizeof(s_vb) );
 
         std::vector<uint8_t> ib;
@@ -2065,7 +2065,7 @@ bool Test03()
     // 32-bit cube
     {
         std::vector<UVAtlasVertex> vb;
-        vb.resize( _countof(s_vb ) );
+        vb.resize( std::size(s_vb ) );
         memcpy( vb.data(), s_vb, sizeof(s_vb) );
 
         std::vector<uint8_t> ib;
