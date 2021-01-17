@@ -13,6 +13,7 @@
 #include "directxtex.h"
 
 #include <memory>
+#include <new>
 
 using namespace DirectX;
 using namespace TestGeometry;
