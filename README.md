@@ -1,6 +1,6 @@
 # Test Suite for _UVAtlas isochart texture atlas_
 
-Copyright (c) Microsoft Corporation. All rights reserved.
+Copyright (c) Microsoft Corporation.
 
 This repo contains the test suite for the [UVAtlas](https://github.com/Microsoft/UVAtlas). For setup instructions, see the [wiki](https://github.com/walbourn/uvatlastest/wiki).
 
