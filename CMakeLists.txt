@@ -30,7 +30,7 @@ add_executable(xtuvatlas
    utils.cpp
    directxtest.cpp)
 add_test(NAME "uvatlas" COMMAND xtuvatlas)
-#set_tests_properties(uvatlas PROPERTIES TIMEOUT 400)
+set_tests_properties(uvatlas PROPERTIES TIMEOUT 240)
 
 message("INFO: Enabled tests: ${TEST_EXES}")
 foreach(t IN LISTS TEST_EXES)
