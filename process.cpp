@@ -234,7 +234,6 @@ bool Test08()
         }
         else
         {
-            std::wstring msgs;
             hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
             if ( FAILED(hr)) 
             {
@@ -386,7 +385,6 @@ bool Test11()
         }
         else
         {
-            std::wstring msgs;
             hr = Validate(reinterpret_cast<const uint32_t*>(ib.data()), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs);
             if (FAILED(hr))
             {

@@ -47,8 +47,10 @@ TestInfo g_Tests[] =
     { "UVAtlasComputeIMTFromSignal", Test05 },
     { "UVAtlasComputeIMTFromTexture", Test06 },
     { "UVAtlasComputeIMTFromPerTexelSignal", Test07 },
+#ifndef _M_ARM64
     { "MeshProcess(16)", Test08 },
     { "MeshProcess(32)", Test11 },
+#endif
 };
 
 

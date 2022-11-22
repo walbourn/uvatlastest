@@ -212,11 +212,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -262,11 +262,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] (2)\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -362,11 +362,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] QUALITY\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -412,11 +412,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t) * 3);
-            if (vb.size() < 26 || vb.size() > 30
+            if (vb.size() < 26 || vb.size() > 32
                 || nFaces != 12
                 || facePart.size() != 12
                 || remap.size() != vb.size()
-                || numCharts != 4)
+                || numCharts < 4 || numCharts > 6)
             {
                 printe("\nERROR: Unexpected results from create atlas [fmcube16] LIMIT_MERGE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                     vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
@@ -466,7 +466,7 @@ bool Test01()
                 || nFaces != 12
                 || facePart.size() != 12
                 || remap.size() != vb.size()
-                || numCharts != 7)
+                || numCharts < 7 || numCharts > 9)
             {
                 printe("\nERROR: Unexpected results from create atlas [fmcube16] LIMIT_FACE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                     vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
@@ -511,7 +511,7 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 28 || vb.size() > 30
+            if ( vb.size() < 28 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
@@ -561,7 +561,7 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 24 || vb.size() > 30
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
@@ -612,11 +612,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] gutter\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -662,11 +662,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] feadj\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -762,10 +762,10 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] facePartitioning null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), remap.size(), maxStretch, numCharts );
@@ -806,10 +806,10 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] remap null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
@@ -832,7 +832,7 @@ bool Test01()
             }
         }
 
-        // maxStretchOut
+        // maxStretchOut nullptr
         hr = UVAtlasCreate( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                             0, 0.f, 512, 512, 1.f,
                             s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
@@ -845,11 +845,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube16] maxStretchOut null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), numCharts );
@@ -882,7 +882,7 @@ bool Test01()
             }
         }
 
-        // numChartsOut
+        // numChartsOut nullptr
         hr = UVAtlasCreate( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                             0, 0.f, 512, 512, 1.f,
                             s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
@@ -895,7 +895,7 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size() )
@@ -947,11 +947,11 @@ bool Test01()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint32_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create atlas [fmcube32]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -1070,12 +1070,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -1124,12 +1124,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] (2)\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -1231,12 +1231,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] QUALITY\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -1285,12 +1285,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t) * 3);
-            if (vb.size() < 26 || vb.size() > 30
+            if (vb.size() < 26 || vb.size() > 32
                 || nFaces != 12
                 || facePart.size() != 12
                 || remap.size() != vb.size()
                 || resultAdj.size() != 3 * 12
-                || numCharts != 4)
+                || numCharts < 4 || numCharts > 6)
             {
                 printe("\nERROR: Unexpected results from create partition [fmcube16] LIMIT_MERGE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                     vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
@@ -1344,7 +1344,7 @@ bool Test02()
                 || facePart.size() != 12
                 || remap.size() != vb.size()
                 || resultAdj.size() != 3 * 12
-                || numCharts != 7)
+                || numCharts < 7 || numCharts > 9)
             {
                 printe("\nERROR: Unexpected results from create partition [fmcube16] LIMIT_FACE_STRETCH\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                     vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts);
@@ -1393,7 +1393,7 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 28 || vb.size() > 30
+            if ( vb.size() < 28 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
@@ -1447,7 +1447,7 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 24 || vb.size() > 30
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
@@ -1502,12 +1502,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] gutter\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -1556,12 +1556,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] feadj\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
@@ -1664,11 +1664,11 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] facePartitioning null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), remap.size(), maxStretch, numCharts );
@@ -1712,11 +1712,11 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] remap null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), maxStretch, numCharts );
@@ -1747,7 +1747,7 @@ bool Test02()
             }
         }
 
-        // maxStretchOut
+        // maxStretchOut nullptr
         hr = UVAtlasPartition( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                                0, 0.f,
                                s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
@@ -1760,12 +1760,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube16] maxStretchOut null\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), numCharts );
@@ -1801,7 +1801,7 @@ bool Test02()
             }
         }
 
-        // numChartsOut
+        // numChartsOut nullptr
         hr = UVAtlasPartition( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                                0, 0.f,
                                s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
@@ -1814,7 +1814,7 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint16_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
@@ -1871,12 +1871,12 @@ bool Test02()
         else
         {
             size_t nFaces = ib.size() / (sizeof(uint32_t)*3);
-            if ( vb.size() < 26 || vb.size() > 30
+            if ( vb.size() < 26 || vb.size() > 32
                  || nFaces != 12
                  || facePart.size() != 12
                  || remap.size() != vb.size()
                  || resultAdj.size() != 3*12
-                 || numCharts != 4 )
+                 || numCharts < 4 || numCharts > 6)
             {
                 printe( "\nERROR: Unexpected results from create partition [fmcube32]\n\tverts %zu\n\tfaces %zu (%zu bytes)\n\tface partitions %zu\n\tremap array %zu\n\tmaxStretch %f\n\tnumCharts %zu\n",
                         vb.size(), nFaces, ib.size(), facePart.size(), remap.size(), maxStretch, numCharts );
