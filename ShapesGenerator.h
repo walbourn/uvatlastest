@@ -14,24 +14,20 @@
 //--------------------------------------------------------------------------------------
 
 #define NOMINMAX
-#include <windows.h>
+#include <Windows.h>
 
 #include <algorithm>
+#include <cstdint>
 #include <vector>
 
-#pragma warning(push)
-#pragma warning(disable : 4005)
-#include <stdint.h>
-#pragma warning(pop)
+#include <DirectXMath.h>
+#include <DirectXCollision.h>
 
-#include <directxmath.h>
-#include <directxcollision.h>
-
-template<class index_t>
+template<class T>
 class ShapesGenerator
 {
 public:
-    typedef index_t index_t;
+    using index_t = T;
 
     struct Vertex
     {

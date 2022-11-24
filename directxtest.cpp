@@ -9,7 +9,7 @@
 
 #include <objbase.h>
 
-#include "uvatlas.h"
+#include "UVAtlas.h"
 
 using namespace DirectX;
 

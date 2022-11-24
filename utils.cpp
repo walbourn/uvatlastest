@@ -7,7 +7,7 @@
 #include "directxtest.h"
 #include "TestHelpers.h"
 
-#include "uvatlas.h"
+#include "UVAtlas.h"
 
 #include <algorithm>
 #include <random>

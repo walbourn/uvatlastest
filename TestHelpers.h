@@ -14,19 +14,15 @@
 //--------------------------------------------------------------------------------------
 
 #define NOMINMAX
-#include <windows.h>
+#include <Windows.h>
 #include <cguid.h>
 
 #include <algorithm>
+#include <cstdint>
 #include <memory>
 
-#pragma warning(push)
-#pragma warning(disable : 4005)
-#include <stdint.h>
-#pragma warning(pop)
-
-#include <directxmath.h>
-#include <directxcollision.h>
+#include <DirectXMath.h>
+#include <DirectXCollision.h>
 
 
 //--------------------------------------------------------------------------------------
@@ -413,7 +409,7 @@ inline bool IsTestVBCorrect16( const uint8_t* vb, size_t count, VB_FILL_TYPE fil
 
 
 //--------------------------------------------------------------------------------------
-extern const __declspec(selectany) DirectX::XMVECTORF32 g_MeshEpsilon = { 1.192092896e-6f, 1.192092896e-6f, 1.192092896e-6f, 1.192092896e-6f };
+extern const __declspec(selectany) DirectX::XMVECTORF32 g_MeshEpsilon = { { { 1.192092896e-6f, 1.192092896e-6f, 1.192092896e-6f, 1.192092896e-6f } } };
 
 inline bool CompareArray( const DirectX::XMFLOAT3* a, const DirectX::XMFLOAT3* b, size_t count )
 {

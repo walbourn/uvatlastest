@@ -6,8 +6,8 @@
 
 #include "directxtest.h"
 
-#include "uvatlas.h"
-#include "directxmesh.h"
+#include "UVAtlas.h"
+#include "DirectXMesh.h"
 
 #include "TestHelpers.h"
 #include "WaveFrontReader.h"

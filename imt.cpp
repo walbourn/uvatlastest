@@ -9,8 +9,8 @@
 #include "TestGeometry.h"
 #include "ShapesGenerator.h"
 
-#include "uvatlas.h"
-#include "directxtex.h"
+#include "UVAtlas.h"
+#include "DirectXTex.h"
 
 #include <memory>
 #include <new>

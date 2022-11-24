@@ -9,8 +9,8 @@
 #include "TestGeometry.h"
 #include "ShapesGenerator.h"
 
-#include "uvatlas.h"
-#include "DirectxMesh.h"
+#include "UVAtlas.h"
+#include "DirectXMesh.h"
 
 using namespace DirectX;
 using namespace TestGeometry;
