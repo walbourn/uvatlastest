@@ -3,27 +3,24 @@
 //
 // Code for creating common shapes (based on DirectXTK's GeometricPrimitive code)
 //
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-// PARTICULAR PURPOSE.
-//
 // Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkID=324981
 //--------------------------------------------------------------------------------------
 
-#define NOMINMAX
-#include <Windows.h>
+#pragma once
 
 #include <algorithm>
-#include <cstdint>
 #include <vector>
 
+#include <cstdint>
+
+#define _XM_NO_XMVECTOR_OVERLOADS_
 #include <DirectXMath.h>
 #include <DirectXCollision.h>
 
-template<class T>
+template<typename T>
 class ShapesGenerator
 {
 public:
@@ -77,7 +74,8 @@ public:
             { 0, 0 },
         };
 
-        size /= 2;
+        XMVECTOR tsize = XMVectorReplicate(size);
+        tsize = XMVectorDivide(tsize, g_XMTwo);
 
         // Create each face in turn.
         for (int i = 0; i < FaceCount; i++)
@@ -101,10 +99,18 @@ public:
             indices.push_back( index_t(vbase + 3) );
 
             // Four vertices per face.
-            vertices.push_back(Vertex((normal - side1 - side2) * size, normal, textureCoordinates[0]));
-            vertices.push_back(Vertex((normal - side1 + side2) * size, normal, textureCoordinates[1]));
-            vertices.push_back(Vertex((normal + side1 + side2) * size, normal, textureCoordinates[2]));
-            vertices.push_back(Vertex((normal + side1 - side2) * size, normal, textureCoordinates[3]));
+
+            // (normal - side1 - side2) * tsize // normal // t0
+            vertices.push_back(Vertex(XMVectorMultiply(XMVectorSubtract(XMVectorSubtract(normal, side1), side2), tsize), normal, textureCoordinates[0]));
+
+            // (normal - side1 + side2) * tsize // normal // t1
+            vertices.push_back(Vertex(XMVectorMultiply(XMVectorAdd(XMVectorSubtract(normal, side1), side2), tsize), normal, textureCoordinates[1]));
+
+            // (normal + side1 + side2) * tsize // normal // t2
+            vertices.push_back(Vertex(XMVectorMultiply(XMVectorAdd(normal, XMVectorAdd(side1, side2)), tsize), normal, textureCoordinates[2]));
+
+            // (normal + side1 - side2) * tsize // normal // t3
+            vertices.push_back(Vertex(XMVectorMultiply(XMVectorSubtract(XMVectorAdd(normal, side1), side2), tsize), normal, textureCoordinates[3]));
         }
 
         if ( !rhcoords )
@@ -151,7 +157,7 @@ public:
                 XMVECTOR normal = XMVectorSet(dx, dy, dz, 0);
                 XMVECTOR textureCoordinate = XMVectorSet(u, v, 0, 0);
 
-                vertices.push_back(Vertex(normal * radius, normal, textureCoordinate));
+                vertices.push_back(Vertex(XMVectorScale(normal, radius), normal, textureCoordinate));
             }
         }
 
@@ -190,7 +196,7 @@ public:
 
         height /= 2;
 
-        XMVECTOR topOffset = g_XMIdentityR1 * height;
+        XMVECTOR topOffset = XMVectorScale(g_XMIdentityR1, height);
 
         float radius = diameter / 2;
         size_t stride = tessellation + 1;
@@ -200,14 +206,14 @@ public:
         {
             XMVECTOR normal = GetCircleVector(i, tessellation);
 
-            XMVECTOR sideOffset = normal * radius;
+            XMVECTOR sideOffset = XMVectorScale(normal, radius);
 
             float u = (float)i / tessellation;
 
             XMVECTOR textureCoordinate = XMLoadFloat(&u);
 
-            vertices.push_back(Vertex(sideOffset + topOffset, normal, textureCoordinate));
-            vertices.push_back(Vertex(sideOffset - topOffset, normal, textureCoordinate + g_XMIdentityR1));
+            vertices.push_back(Vertex(XMVectorAdd(sideOffset, topOffset), normal, textureCoordinate));
+            vertices.push_back(Vertex(XMVectorSubtract(sideOffset, topOffset), normal, XMVectorAdd(textureCoordinate, g_XMIdentityR1)));
 
             indices.push_back( index_t(i * 2) );
             indices.push_back( index_t((i * 2 + 2) % (stride * 2)) );
@@ -260,7 +266,7 @@ public:
 
                 // Create a vertex.
                 XMVECTOR normal = XMVectorSet(dx, dy, 0, 0);
-                XMVECTOR position = normal * thickness / 2;
+                XMVECTOR position = XMVectorScale(normal, thickness / 2.f);
                 XMVECTOR textureCoordinate = XMVectorSet(u, v, 0, 0);
 
                 position = XMVector3Transform(position, transform);
@@ -295,9 +301,9 @@ private:
             std::swap( *it, *(it+2) );
         }
 
-        for( auto it = vertices.begin(); it != vertices.end(); ++it )
+        for (auto& it : vertices)
         {
-            it->textureCoordinate.x = ( 1.f - it->textureCoordinate.x );
+            it.textureCoordinate.x = (1.f - it.textureCoordinate.x);
         }
     }
 
@@ -310,7 +316,7 @@ private:
 
         XMScalarSinCos(&dx, &dz, angle);
 
-        XMVECTORF32 v = { dx, 0, dz, 0 };
+        XMVECTORF32 v = { { { dx, 0, dz, 0 } } };
         return v;
     }
 
@@ -354,8 +360,8 @@ private:
 
         if (!isTop)
         {
-            normal = -normal;
-            textureScale *= g_XMNegateX;
+            normal = XMVectorNegate(normal);
+            textureScale = XMVectorMultiply(textureScale, g_XMNegateX);
         }
 
         // Create cap vertices.
@@ -363,7 +369,7 @@ private:
         {
             XMVECTOR circleVector = GetCircleVector(i, tessellation);
 
-            XMVECTOR position = (circleVector * radius) + (normal * height);
+            XMVECTOR position = XMVectorAdd( XMVectorScale(circleVector, radius), XMVectorScale(normal, height) );
 
             XMVECTOR textureCoordinate = XMVectorMultiplyAdd(XMVectorSwizzle<0, 2, 3, 3>(circleVector), textureScale, g_XMOneHalf);
 

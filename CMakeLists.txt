@@ -30,7 +30,7 @@ add_executable(xtuvatlas
    utils.cpp
    directxtest.cpp)
 add_test(NAME "uvatlas" COMMAND xtuvatlas)
-set_tests_properties(uvatlas PROPERTIES TIMEOUT 240)
+set_tests_properties(uvatlas PROPERTIES TIMEOUT 600)
 
 message("INFO: Enabled tests: ${TEST_EXES}")
 foreach(t IN LISTS TEST_EXES)
@@ -123,7 +123,7 @@ endif()
 if (VCPKG_TOOLCHAIN)
     find_package(directxmesh CONFIG REQUIRED COMPONENTS library utils)
     find_package(directxtex CONFIG REQUIRED)
-    target_link_libraries(xtuvatlas PRIVATE Microsoft::DirectXTex Microsoft::DirectXMesh Microsoft::Utilities)
+    target_link_libraries(xtuvatlas PRIVATE Microsoft::DirectXTex Microsoft::DirectXMesh Microsoft::DirectXMesh::Utilities)
 else()
     set(BUILD_TOOLS OFF)
     set(BUILD_TESTING OFF)
