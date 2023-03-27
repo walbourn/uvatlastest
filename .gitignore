@@ -24,4 +24,5 @@ Debug
 Profile
 Release
 x64
+toolscripts/out
 CMakeUserPresets.json
