@@ -2,7 +2,9 @@
 
 setlocal
 
-set TARGETEXE=..\..\UVAtlasTool\Bin\Desktop_2022\x64\Debug\uvatlastool.exe
+set TARGETEXE=..\..\out\build\x64-Debug-VCPKG\bin\uvatlastool.exe
+REM set TARGETEXE=..\..\UVAtlasTool\Bin\Desktop_2022\x64\Debug\uvatlastool.exe
+REM set TARGETEXE=..\..\UVAtlasTool\Bin\Desktop_2022\x64\Debug\uvatlastool.exe
 REM set TARGETEXE=..\..\UVAtlasTool\Bin\Desktop_2022\Win32\Release\uvatlastool.exe
 set SPEC=*
 
