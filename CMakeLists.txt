@@ -32,7 +32,7 @@ add_executable(xtuvatlas
 add_test(NAME "uvatlas" COMMAND xtuvatlas)
 set_tests_properties(uvatlas PROPERTIES TIMEOUT 600)
 
-message("INFO: Enabled tests: ${TEST_EXES}")
+message(STATUS "Enabled tests: ${TEST_EXES}")
 foreach(t IN LISTS TEST_EXES)
   target_link_libraries(${t} PRIVATE UVAtlas)
 endforeach()
