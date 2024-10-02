@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------
 // process.cpp
-//  
+//
 // Copyright (c) Microsoft Corporation.
 //-------------------------------------------------------------------------------------
 
@@ -24,6 +24,7 @@ static const TestMedia g_TestMedia16[] =
     // filename
     { MESH_MEDIA_PATH L"cup._obj",               },
     { MESH_MEDIA_PATH L"teapot._obj",            },
+#ifndef BUILD_BVT_ONLY
     { MESH_MEDIA_PATH L"SuperSimpleRunner._obj", },
     { MESH_MEDIA_PATH L"shuttle._obj",           },
     { MESH_MEDIA_PATH L"player_ship_a._obj",     },
@@ -31,14 +32,17 @@ static const TestMedia g_TestMedia16[] =
     { MESH_MEDIA_PATH L"sphere.vbo",             },
     { MESH_MEDIA_PATH L"cylinder.vbo",           },
     { MESH_MEDIA_PATH L"torus.vbo",              },
+#endif
 };
 
+#ifndef BUILD_BVT_ONLY
 static const TestMedia g_TestMedia32[] =
 {
     // filename
     { MESH_MEDIA_PATH L"Head_Big_Ears._obj",     },
     { MESH_MEDIA_PATH L"John40k._obj",           },
 };
+#endif
 
 
 //-------------------------------------------------------------------------------------
@@ -114,11 +118,11 @@ bool Test08()
     {
         wchar_t szPath[MAX_PATH] = {};
         DWORD ret = ExpandEnvironmentStringsW( g_TestMedia16[index].fname, szPath, MAX_PATH );
-        if ( !ret || ret > MAX_PATH )  
-        {  
-            printe( "ERROR: ExpandEnvironmentStrings FAILED\n" );  
-            return false;  
-        } 
+        if ( !ret || ret > MAX_PATH )
+        {
+            printe( "ERROR: ExpandEnvironmentStrings FAILED\n" );
+            return false;
+        }
 
 #ifdef _DEBUG
         OutputDebugStringW(szPath);
@@ -235,7 +239,7 @@ bool Test08()
         else
         {
             hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), nFaces, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-            if ( FAILED(hr)) 
+            if ( FAILED(hr) )
             {
                 printe( "\nERROR: Invalid index buffer from create atlas (%08X):\n%S\n%S\n", static_cast<unsigned int>(hr), szPath, msgs.c_str() );
                 success = false;
@@ -254,6 +258,7 @@ bool Test08()
 
 //-------------------------------------------------------------------------------------
 // MeshProcess (32-bit)
+#ifndef BUILD_BVT_ONLY
 bool Test11()
 {
     bool success = true;
@@ -400,3 +405,4 @@ bool Test11()
 
     return success;
 }
+#endif

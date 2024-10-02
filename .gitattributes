@@ -15,4 +15,5 @@
 *.sln eol=crlf
 
 # Explicitly declare resource files as binary
+*.dds binary
 *.pdb binary
