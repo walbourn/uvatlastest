@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------
 // DirectXTest.cpp
-//  
+//
 // Copyright (c) Microsoft Corporation.
 //-------------------------------------------------------------------------------------
 
@@ -34,7 +34,9 @@ extern bool Test07();
 extern bool Test08();
 extern bool Test09();
 extern bool Test10();
+#ifndef BUILD_BVT_ONLY
 extern bool Test11();
+#endif
 
 TestInfo g_Tests[] =
 {
@@ -49,7 +51,9 @@ TestInfo g_Tests[] =
     { "UVAtlasComputeIMTFromPerTexelSignal", Test07 },
 #ifndef _M_ARM64
     { "MeshProcess(16)", Test08 },
+#ifndef BUILD_BVT_ONLY
     { "MeshProcess(32)", Test11 },
+#endif
 #endif
 };
 
@@ -99,12 +103,12 @@ int __cdecl main()
     HRESULT hr = CoInitializeEx( NULL, COINIT_MULTITHREADED );
     if ( FAILED(hr) )
     {
-        printe("ERROR: CoInitializeEx fails (%08X)\n", static_cast<unsigned int>(hr)); 
+        printe("ERROR: CoInitializeEx fails (%08X)\n", static_cast<unsigned int>(hr));
         return -1;
     }
 
     if ( !RunTests() )
         return -1;
-       
+
     return 0;
 }
