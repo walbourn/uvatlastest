@@ -134,7 +134,7 @@ bool Test08()
 
         ++ncount;
 
-        std::unique_ptr<WaveFrontReader<uint16_t>> mesh( new WaveFrontReader<uint16_t>() );
+        std::unique_ptr<DX::WaveFrontReader<uint16_t>> mesh(new DX::WaveFrontReader<uint16_t>());
 
         print( "*" );
 
@@ -286,7 +286,7 @@ bool Test11()
 
         ++ncount;
 
-        std::unique_ptr<WaveFrontReader<uint32_t>> mesh(new WaveFrontReader<uint32_t>());
+        std::unique_ptr<DX::WaveFrontReader<uint32_t>> mesh(new DX::WaveFrontReader<uint32_t>());
 
         print("*");
 
