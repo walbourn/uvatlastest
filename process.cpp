@@ -12,6 +12,13 @@
 #include "TestHelpers.h"
 #include "WaveFrontReader.h"
 
+namespace DX
+{
+    //TODO: This namespace declaration can be removed when vcpkg in DirectXMesh is updated.
+    constexpr size_t TEMP_VALUE = 1;
+}
+
+using namespace DX;
 using namespace DirectX;
 
 struct TestMedia
