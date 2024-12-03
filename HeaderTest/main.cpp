@@ -23,7 +23,11 @@
 
 #include "UVAtlas.h"
 
-int main()
+#ifdef __clang__
+#pragma clang diagnostic ignored "-Wmissing-prototypes"
+#endif
+
+int __cdecl wmain(int, wchar_t* [], wchar_t* [])
 {
     return 0;
 }
