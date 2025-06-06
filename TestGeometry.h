@@ -17,7 +17,7 @@ namespace TestGeometry
 {
 
 //--- Cube ----------------------------------------------------------------------------
-extern const __declspec(selectany) DirectX::XMFLOAT3 g_cubeVerts[ 8 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT3 g_cubeVerts[ 8 ] =
     {
         DirectX::XMFLOAT3( 0.f, 0.f, 0.f ),
         DirectX::XMFLOAT3( 1.f, 1.f, 0.f ),
@@ -63,7 +63,7 @@ extern const __declspec(selectany) uint32_t g_cubeIndices32[ 12*3 ] =
 
 
 //--- Face-mapped Cube ----------------------------------------------------------------
-extern const __declspec(selectany) DirectX::XMFLOAT3 g_fmCubeVerts[ 24 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT3 g_fmCubeVerts[ 24 ] =
     {
         DirectX::XMFLOAT3( -1.0f, 1.0f, -1.0f ),
         DirectX::XMFLOAT3( 1.0f, 1.0f, -1.0f ),
@@ -96,7 +96,7 @@ extern const __declspec(selectany) DirectX::XMFLOAT3 g_fmCubeVerts[ 24 ] =
         DirectX::XMFLOAT3( -1.0f, 1.0f, 1.0f ),
     };
 
-extern const __declspec(selectany) DirectX::XMFLOAT2 g_fmCubeUVs[ 24 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT2 g_fmCubeUVs[ 24 ] =
     {
         DirectX::XMFLOAT2( 1.0f, 0.0f ),
         DirectX::XMFLOAT2( 0.0f, 0.0f ),
@@ -183,7 +183,7 @@ extern const __declspec(selectany) uint32_t g_fmCubeAttributes[ 12 ] =
 
 
 //--- Box (aka cuboid or rectangular parallelepiped) ----------------------------------
-extern const __declspec(selectany) DirectX::XMFLOAT3 g_boxVerts[ 8 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT3 g_boxVerts[ 8 ] =
     {
         DirectX::XMFLOAT3( 0.f, 0.f, 0.f ),
         DirectX::XMFLOAT3( 4.f, 2.f, 0.f ),
@@ -229,7 +229,7 @@ extern const __declspec(selectany) uint32_t g_boxIndices32[ 12*3 ] =
 
 
 //--- Tetrahedron ---------------------------------------------------------------------
-extern const __declspec(selectany) DirectX::XMFLOAT3 g_tetraVerts[ 4 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT3 g_tetraVerts[ 4 ] =
     {
         DirectX::XMFLOAT3( 1.f, 1.f, 1.f ),
         DirectX::XMFLOAT3( 1.f, 2.f, 1.f ),
@@ -255,7 +255,7 @@ extern const __declspec(selectany) uint32_t g_tetraIndices32[ 4*3 ] =
 
 
 //--- Bowtie --------------------------------------------------------------------------
-extern const __declspec(selectany) DirectX::XMFLOAT3 g_bowtieVerts[ 5 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT3 g_bowtieVerts[ 5 ] =
     {
         DirectX::XMFLOAT3( -1.f, 1.f, 0.f ),
         DirectX::XMFLOAT3( -1.f, -1.f, 0.f ),
@@ -278,7 +278,7 @@ extern const __declspec(selectany) uint32_t g_bowtieIndices32[ 2*3 ] =
 
 
 //--- Backfacing ----------------------------------------------------------------------
-extern const __declspec(selectany) DirectX::XMFLOAT3 g_backfaceVerts[ 3 ] = 
+extern const __declspec(selectany) DirectX::XMFLOAT3 g_backfaceVerts[ 3 ] =
     {
         DirectX::XMFLOAT3( 0.f, 0.f, 0.f ),
         DirectX::XMFLOAT3( 1.f, 0.f, 0.f ),

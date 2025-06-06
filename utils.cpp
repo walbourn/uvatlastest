@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------
 // utils.cpp
-//  
+//
 // Copyright (c) Microsoft Corporation.
 //-------------------------------------------------------------------------------------
 
@@ -281,7 +281,7 @@ bool Test09()
             success = false;
             for( size_t j = 0; j < 24; ++j )
             {
-                printe("\t%zu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );  
+                printe("\t%zu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );
             }
         }
     }
@@ -608,7 +608,7 @@ bool Test10()
             success = false;
             for( size_t j = 0; j < 28; ++j )
             {
-                printe("\t%zu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );  
+                printe("\t%zu: %u .. %u\n", j, destvb[ j ], s_remap[ j ] );
             }
         }
     }

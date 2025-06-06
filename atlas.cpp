@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------
 // atlas.cpp
-//  
+//
 // Copyright (c) Microsoft Corporation.
 //-------------------------------------------------------------------------------------
 
@@ -17,15 +17,15 @@ using namespace TestGeometry;
 
 static const uint32_t s_fmCubeAdj[3 * 12] =
 {
-    1, 9, 5, 
+    1, 9, 5,
     7, 0, 11,
-    3, 8, 6, 
+    3, 8, 6,
     4, 2, 10,
     5, 3, 11,
     8, 4, 0,
     7, 2, 9,
     10, 6, 1,
-    9, 2, 5, 
+    9, 2, 5,
     6, 8, 0,
     11, 3, 7,
     4, 10, 1
@@ -33,18 +33,18 @@ static const uint32_t s_fmCubeAdj[3 * 12] =
 
 static const uint32_t s_feCubeAdj[3 * 12] =
 {
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
-    uint32_t(-1), uint32_t(-1), uint32_t(-1), 
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
+    uint32_t(-1), uint32_t(-1), uint32_t(-1),
 };
 
 static const float s_fmCubeIMT[3 * 12] =
@@ -241,7 +241,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -291,7 +291,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] (2) (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -341,14 +341,14 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] FAST (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
         }
-                            
+
         // UVATLAS_GEODESIC_QUALITY
         hr = UVAtlasCreate( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                             0, 0.f, 512, 512, 1.f,
@@ -391,7 +391,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -540,7 +540,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxchartnumber (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -591,7 +591,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxstretch (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -641,7 +641,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] gutter (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -691,7 +691,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] feadj (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -741,7 +741,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] imt (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -785,7 +785,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] facePartitioning null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -824,7 +824,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] remap null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -874,7 +874,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] maxStretchOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -918,7 +918,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube16] numChartsOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -976,7 +976,7 @@ bool Test01()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create atlas [fmcube32] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1008,7 +1008,7 @@ bool Test02()
         float maxStretch = 0.f;
         size_t numCharts = 0;
         hr = UVAtlasPartition( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R8G8B8A8_UNORM, 12,
-                               0, 0.f, 
+                               0, 0.f,
                                s_fmCubeAdj, nullptr, nullptr, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY,
                                UVATLAS_DEFAULT, vb, ib, &facePart, &remap, resultAdj, &maxStretch, &numCharts );
         if ( hr != E_INVALIDARG )
@@ -1095,7 +1095,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1103,7 +1103,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1149,14 +1149,14 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] (2) (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] (2) (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1202,7 +1202,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] FAST (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1210,14 +1210,14 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] FAST (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
                 }
             }
         }
-                            
+
         // UVATLAS_GEODESIC_QUALITY
         hr = UVAtlasPartition( g_fmCubeVerts, 24, g_fmCubeIndices16, DXGI_FORMAT_R16_UINT, 12,
                                0, 0.f,
@@ -1256,7 +1256,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1264,7 +1264,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] QUALITY (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1418,7 +1418,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxchartnumber (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1426,7 +1426,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxchartnumber (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1473,7 +1473,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxstretch (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1481,7 +1481,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxstretch (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1527,7 +1527,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] gutter (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1535,7 +1535,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] gutter (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1581,7 +1581,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] feadj (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1589,7 +1589,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] feadj (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1635,7 +1635,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] imt (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1643,7 +1643,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] imt (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1683,7 +1683,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] facePartitioning null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1691,7 +1691,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] facePartitioning null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1731,7 +1731,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] remap null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1739,7 +1739,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] remap null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1785,7 +1785,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] maxStretchOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1793,7 +1793,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] maxStretchOut null(%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1833,7 +1833,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube16] numChartsOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1841,7 +1841,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint16_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube16] numChartsOut null (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1896,7 +1896,7 @@ bool Test02()
             {
                 std::wstring msgs;
                 hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), nullptr, VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid index buffer from create partition [fmcube32] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -1904,7 +1904,7 @@ bool Test02()
 
                 msgs.clear();
                 hr = Validate( reinterpret_cast<const uint32_t*>( ib.data() ), 12, vb.size(), resultAdj.data(), VALIDATE_DEFAULT, &msgs );
-                if ( FAILED(hr)) 
+                if ( FAILED(hr))
                 {
                     printe( "\nERROR: Invalid result adj from create partition [fmcube32] (%08X):%S\n", static_cast<unsigned int>(hr), msgs.c_str() );
                     success = false;
@@ -2017,7 +2017,7 @@ bool Test03()
         std::vector<uint32_t> resultAdj;
         resultAdj.resize( 12*3 );
         memcpy( resultAdj.data(), s_resultAdj, sizeof(s_resultAdj) );
-                        
+
         hr = UVAtlasPack( vb, ib, DXGI_FORMAT_R8G8B8A8_UNORM,
                           512, 512, 1.f,
                           resultAdj, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY );
@@ -2051,7 +2051,7 @@ bool Test03()
         std::vector<uint32_t> resultAdj;
         resultAdj.resize( 12*3 );
         memcpy( resultAdj.data(), s_resultAdj, sizeof(s_resultAdj) );
-        
+
         hr = UVAtlasPack( vb, ib, DXGI_FORMAT_R16_UINT,
                           512, 512, 1.f,
                           resultAdj, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY );
@@ -2075,7 +2075,7 @@ bool Test03()
         std::vector<uint32_t> resultAdj;
         resultAdj.resize( 12*3 );
         memcpy( resultAdj.data(), s_resultAdj, sizeof(s_resultAdj) );
-        
+
         hr = UVAtlasPack( vb, ib, DXGI_FORMAT_R32_UINT,
                           512, 512, 1.f,
                           resultAdj, UVAtlasCallback, UVATLAS_DEFAULT_CALLBACK_FREQUENCY );

@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------
 // imt.cpp
-//  
+//
 // Copyright (c) Microsoft Corporation.
 //-------------------------------------------------------------------------------------
 
@@ -74,11 +74,11 @@ static HRESULT LoadTextureF32( const wchar_t* fname, std::unique_ptr<float[]>& t
 
     wchar_t szPath[MAX_PATH] = {};
     DWORD ret = ExpandEnvironmentStringsW( fname, szPath, MAX_PATH );
-    if ( !ret || ret > MAX_PATH )  
-    {  
-        printe( "ERROR: ExpandEnvironmentStrings FAILED\n" );  
-        return E_FAIL;  
-    } 
+    if ( !ret || ret > MAX_PATH )
+    {
+        printe( "ERROR: ExpandEnvironmentStrings FAILED\n" );
+        return E_FAIL;
+    }
 
     wchar_t ext[_MAX_EXT];
     _wsplitpath_s( szPath, nullptr, 0, nullptr, 0, nullptr, 0, ext, _MAX_EXT );
@@ -1169,7 +1169,7 @@ bool Test07()
     }
 
     std::unique_ptr<float[]> imtArray( new float[ 12 * 3 ] );
-    
+
     // invalid args
     #pragma warning(push)
     #pragma warning(disable : 6385 6387)
